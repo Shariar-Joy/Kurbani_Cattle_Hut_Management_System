@@ -4,6 +4,8 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
+import java.io.IOException;
+
 public class SignUpController
 {
     @javafx.fxml.FXML
@@ -27,7 +29,8 @@ public class SignUpController
     }
 
     @javafx.fxml.FXML
-    public void loginOnActionButton(ActionEvent actionEvent) {
+    public void loginOnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/login.fxml");
     }
 
     @javafx.fxml.FXML
