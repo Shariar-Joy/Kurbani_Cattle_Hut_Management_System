@@ -4,4 +4,13 @@ public class Hut_Manager_Goal1Controller
 {
     @javafx.fxml.FXML
     public void initialize() {
-    }}
+    }
+
+    @javafx.fxml.FXML
+    public void signOutOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void goBackOnActionButton(ActionEvent actionEvent) {
+    }
+}
