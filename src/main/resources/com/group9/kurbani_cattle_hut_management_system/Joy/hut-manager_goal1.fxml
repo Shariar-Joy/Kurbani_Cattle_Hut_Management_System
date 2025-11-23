@@ -1,26 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal1Controller">
+<AnchorPane prefHeight="625.0" prefWidth="0.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal1Controller">
    <children>
       <Label layoutX="24.0" layoutY="21.0" prefHeight="28.0" prefWidth="346.0" text="Goal 1: Monitor cattle entries &amp; exits">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="468.0" layoutY="371.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="487.0" layoutY="4.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+      <Button layoutX="867.0" layoutY="586.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="866.0" layoutY="18.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="517.0" layoutY="37.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="485.0" layoutX="110.0" layoutY="78.0" startX="-96.0" />
+      <Button layoutX="896.0" layoutY="49.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="877.0" layoutX="110.0" layoutY="78.0" startX="-83.0" />
+      <TextField fx:id="animalIdTF" layoutX="24.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" text="Animal ID" />
+      <Label layoutX="24.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Animal Registration">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="breedTF" layoutX="24.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" text="Breed" />
+      <TextField fx:id="ageTF" layoutX="24.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" text="Age" />
+      <TextField fx:id="weightTF" layoutX="197.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" text="Weight (kg)" />
+      <TextField fx:id="colorTF" layoutX="197.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" text="Color" />
+      <TextField fx:id="askingPriceTF" layoutX="197.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" text="Asking Price" />
+      <Label layoutX="378.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Owner Registration">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ownerIdTF" layoutX="378.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" text="Owner ID" />
+      <TextField fx:id="ownerNidTF" layoutX="378.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" text="Onwer NID" />
+      <TextField fx:id="ownerPhone" layoutX="378.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" text="Owner Phone" />
+      <TextField fx:id="ownerNameTF" layoutX="549.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" text="Owner Name" />
+      <TextField fx:id="ownerAddressTF" layoutX="549.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" text="Owner Address" />
+      <DatePicker fx:id="entryDateDatePicker" layoutX="24.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" promptText="Entry Date" />
+      <ComboBox fx:id="animalTypeCB" layoutX="197.0" layoutY="131.0" prefHeight="28.0" prefWidth="150.0" promptText="Animal Type" />
+      <ComboBox fx:id="selectTentCB" layoutX="549.0" layoutY="221.0" prefHeight="28.0" prefWidth="150.0" promptText="Select Tent" />
+      <TableView fx:id="animalTableView" layoutX="24.0" layoutY="368.0" prefHeight="200.0" prefWidth="986.0">
+        <columns>
+          <TableColumn fx:id="animalIdCOL" prefWidth="85.0" text="Animal ID" />
+          <TableColumn fx:id="animalTypeCOL" prefWidth="95.0" text="Animal Type" />
+            <TableColumn fx:id="breedCOL" prefWidth="73.0" text="Breed" />
+            <TableColumn fx:id="weightCOL" prefWidth="94.0" text="Weight (kg)" />
+            <TableColumn fx:id="ageCOL" prefWidth="57.0" text="Age" />
+            <TableColumn fx:id="askingPriceCOL" prefWidth="106.0" text="Asking Price " />
+            <TableColumn fx:id="entryDateCOl" prefWidth="88.0" text="Entry Date" />
+            <TableColumn fx:id="ownerIdCOL" prefWidth="96.0" text="Owner ID" />
+            <TableColumn fx:id="ownerNameCOL" prefWidth="96.0" text="Owner Name" />
+            <TableColumn fx:id="ownerNidCOL" prefWidth="95.0" text="Owner NID" />
+            <TableColumn fx:id="ownerPhoneCOL" prefWidth="100.0" text="Owner Phone" />
+        </columns>
+      </TableView>
+      <Label layoutX="740.0" layoutY="90.0" prefHeight="34.0" prefWidth="101.0" text="Remove Animal">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="searchTF" layoutX="690.0" layoutY="340.0" prefHeight="28.0" prefWidth="245.0" text="Search" />
+      <Button layoutX="935.0" layoutY="340.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+      <Button layoutX="24.0" layoutY="312.0" mnemonicParsing="false" onAction="#saveOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Save Entry" />
+      <Button layoutX="116.0" layoutY="312.0" mnemonicParsing="false" onAction="#cancleOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Cancle" />
+      <Line endX="-100.0" endY="195.0" layoutX="815.0" layoutY="123.0" startX="-100.0" />
+      <TextField fx:id="removeAnimalIdTF" layoutX="725.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" text="Animal ID" />
+      <TextField fx:id="reasonToRemoveTF" layoutX="725.0" layoutY="176.0" prefHeight="67.0" prefWidth="278.0" text="Reason To Remove" />
+      <DatePicker fx:id="exitDateDatePicker" layoutX="868.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" promptText="Exit Date" />
+      <Button layoutX="838.0" layoutY="265.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
    </children>
 </AnchorPane>

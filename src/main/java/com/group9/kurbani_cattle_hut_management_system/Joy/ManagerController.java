@@ -18,34 +18,42 @@ public class ManagerController
     }
 
     @javafx.fxml.FXML
-    public void goal1OnActionButton(ActionEvent actionEvent) {
+    public void goal1OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal1.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal2OnActionButton(ActionEvent actionEvent) {
+    public void goal2OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal2.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal3OnActionButton(ActionEvent actionEvent) {
+    public void goal3OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal3.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal4OnActionButton(ActionEvent actionEvent) {
+    public void goal4OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal4.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal5OnActionButton(ActionEvent actionEvent) {
+    public void goal5OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal5.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal6OnActionButton(ActionEvent actionEvent) {
+    public void goal6OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal6.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal7OnActionButton(ActionEvent actionEvent) {
+    public void goal7OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal7.fxml");
     }
 
     @javafx.fxml.FXML
-    public void goal8OnActionButton(ActionEvent actionEvent) {
+    public void goal8OnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent,"/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal8.fxml");
     }
 }

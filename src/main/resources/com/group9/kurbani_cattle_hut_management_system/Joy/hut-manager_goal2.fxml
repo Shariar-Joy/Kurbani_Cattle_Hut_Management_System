@@ -1,14 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal2Controller"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="667.0" prefWidth="761.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal2Controller">
+   <children>
+      <Label layoutX="19.0" layoutY="17.0" prefHeight="28.0" prefWidth="346.0" text="Goal 2: Manage spot/tent allocation &amp; layout">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="619.0" layoutY="632.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="637.0" layoutY="14.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="667.0" layoutY="45.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="643.0" layoutX="115.0" layoutY="77.0" startX="-96.0" />
+      <TextArea layoutX="19.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T1&#10;Capacity : 5&#10;" />
+      <TextArea layoutX="167.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T2&#10;Capacity : 5&#10;" />
+      <TextArea layoutX="311.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T3&#10;Capacity : 5&#10;" />
+      <TextArea layoutX="456.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T4&#10;Capacity : 4&#10;&#10;" />
+      <Label layoutX="19.0" layoutY="330.0" prefHeight="34.0" prefWidth="202.0" text="Move Animal Between Tents">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="animalIdCB" layoutX="19.0" layoutY="372.0" prefHeight="28.0" prefWidth="122.0" promptText="Animal ID" />
+      <TableView layoutX="19.0" layoutY="420.0" prefHeight="200.0" prefWidth="740.0">
+        <columns>
+          <TableColumn fx:id="tentIdCOL" prefWidth="82.0" text="Tent ID" />
+          <TableColumn fx:id="totalCapacityCOL" prefWidth="162.0" text="Total Capacity" />
+            <TableColumn fx:id="occupiedSlotsCOL" prefWidth="136.0" text="Occupied Slots" />
+            <TableColumn fx:id="freeSlotsCOL" prefWidth="122.0" text="Free Slots" />
+            <TableColumn fx:id="directionCOL" prefWidth="113.0" text="Direction" />
+            <TableColumn fx:id="statusCOL" prefWidth="124.0" text="Status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTF" layoutX="441.0" layoutY="392.0" prefHeight="28.0" prefWidth="245.0" text="Search" />
+      <Button layoutX="686.0" layoutY="392.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+      <TextArea layoutX="614.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T4&#10;Capacity : 5&#10;&#10;" />
+      <ComboBox fx:id="tentIdCB" layoutX="152.0" layoutY="372.0" prefHeight="28.0" prefWidth="122.0" promptText="Tent ID" />
+      <Button layoutX="19.0" layoutY="632.0" mnemonicParsing="false" onAction="#exportOnActionButton" text="Export the PDF" />
+      <Button layoutX="288.0" layoutY="373.0" mnemonicParsing="false" onAction="#moveOnActionButton" prefHeight="28.0" prefWidth="46.0" text="Move" />
+      <Label layoutX="19.0" layoutY="154.0" prefHeight="28.0" prefWidth="107.0" text="Tent Registration">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tentIdTF" layoutX="19.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Tent ID" />
+      <TextField fx:id="totalCapacityTF" layoutX="19.0" layoutY="235.0" prefHeight="28.0" prefWidth="149.0" text="Total Capacity " />
+      <TextField fx:id="animalIdTF" layoutX="192.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Occupied Slots" />
+      <ComboBox fx:id="directionCB" layoutX="192.0" layoutY="237.0" prefWidth="150.0" promptText="Direction  " />
+      <Line endX="-100.0" endY="168.0" layoutX="504.0" layoutY="169.0" startX="-100.0" />
+      <Label layoutX="434.0" layoutY="155.0" prefHeight="28.0" prefWidth="122.0" text="Remove Tent">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="removeTentIdTF" layoutX="434.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Tent ID" />
+      <TextField fx:id="reasonToRemoveTF" layoutX="433.0" layoutY="227.0" prefHeight="52.0" prefWidth="150.0" text="Reason TO Remove" />
+      <Button layoutX="300.0" layoutY="321.0" mnemonicParsing="false" onAction="#AddOnActionButton" text="Add " />
+      <Button layoutX="466.0" layoutY="318.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
+      <TextField fx:id="totalCapacityTF1" layoutX="19.0" layoutY="282.0" prefHeight="28.0" prefWidth="149.0" text="Free Slots" />
+      <ComboBox fx:id="statusCB" layoutX="192.0" layoutY="284.0" prefWidth="150.0" promptText="Status" />
+   </children>
 </AnchorPane>
