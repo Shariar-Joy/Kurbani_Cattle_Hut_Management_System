@@ -2,7 +2,7 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 public class Tent {
     private String tentID;
-    private int occupiedSloats;
+    private int occupiedSlots;
     private int totalCapacity;
     private int freeSlots;
     private String direction;
@@ -10,12 +10,13 @@ public class Tent {
 
     public Tent(String tentID, int occupiedSloats, int totalCapacity, int freeSlots, String direction, String status) {
         this.tentID = tentID;
-        this.occupiedSloats = occupiedSloats;
+        this.occupiedSlots = occupiedSloats;
         this.totalCapacity = totalCapacity;
         this.freeSlots = freeSlots;
         this.direction = direction;
         this.status = status;
     }
+
 
     public String getTentID() {
         return tentID;
@@ -26,11 +27,11 @@ public class Tent {
     }
 
     public int getOccupiedSloats() {
-        return occupiedSloats;
+        return occupiedSlots;
     }
 
     public void setOccupiedSloats(int occupiedSloats) {
-        this.occupiedSloats = occupiedSloats;
+        this.occupiedSlots = occupiedSloats;
     }
 
     public int getTotalCapacity() {
@@ -65,11 +66,12 @@ public class Tent {
         this.status = status;
     }
 
+
     @Override
     public String toString() {
         return "Tent{" +
                 "tentID='" + tentID + '\'' +
-                ", occupiedSloats=" + occupiedSloats +
+                ", occupiedSloats=" + occupiedSlots +
                 ", totalCapacity=" + totalCapacity +
                 ", freeSlots=" + freeSlots +
                 ", direction='" + direction + '\'' +

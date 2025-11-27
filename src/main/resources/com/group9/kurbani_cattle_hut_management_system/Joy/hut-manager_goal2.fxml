@@ -36,7 +36,7 @@
          </font>
       </Label>
       <ComboBox fx:id="animalIdCB" layoutX="19.0" layoutY="372.0" prefHeight="28.0" prefWidth="122.0" promptText="Animal ID" />
-      <TableView layoutX="19.0" layoutY="420.0" prefHeight="200.0" prefWidth="740.0">
+      <TableView fx:id="tentTableView" layoutX="19.0" layoutY="420.0" prefHeight="200.0" prefWidth="740.0">
         <columns>
           <TableColumn fx:id="tentIdCOL" prefWidth="82.0" text="Tent ID" />
           <TableColumn fx:id="totalCapacityCOL" prefWidth="162.0" text="Total Capacity" />
@@ -46,20 +46,19 @@
             <TableColumn fx:id="statusCOL" prefWidth="124.0" text="Status" />
         </columns>
       </TableView>
-      <TextField fx:id="searchTF" layoutX="441.0" layoutY="392.0" prefHeight="28.0" prefWidth="245.0" text="Search" />
+      <TextField fx:id="searchTF" layoutX="441.0" layoutY="392.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Tent ID" />
       <Button layoutX="686.0" layoutY="392.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
       <TextArea layoutX="614.0" layoutY="86.0" prefHeight="52.0" prefWidth="122.0" text="T4&#10;Capacity : 5&#10;&#10;" />
       <ComboBox fx:id="tentIdCB" layoutX="152.0" layoutY="372.0" prefHeight="28.0" prefWidth="122.0" promptText="Tent ID" />
-      <Button layoutX="19.0" layoutY="632.0" mnemonicParsing="false" onAction="#exportOnActionButton" text="Export the PDF" />
       <Button layoutX="288.0" layoutY="373.0" mnemonicParsing="false" onAction="#moveOnActionButton" prefHeight="28.0" prefWidth="46.0" text="Move" />
       <Label layoutX="19.0" layoutY="154.0" prefHeight="28.0" prefWidth="107.0" text="Tent Registration">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="tentIdTF" layoutX="19.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Tent ID" />
-      <TextField fx:id="totalCapacityTF" layoutX="19.0" layoutY="235.0" prefHeight="28.0" prefWidth="149.0" text="Total Capacity " />
-      <TextField fx:id="animalIdTF" layoutX="192.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Occupied Slots" />
+      <TextField fx:id="tentIdTF" layoutX="19.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Tent ID" />
+      <TextField fx:id="totalCapacityTF" layoutX="19.0" layoutY="235.0" prefHeight="28.0" prefWidth="149.0" promptText="Total Capacity " />
+      <TextField fx:id="occupiedSlotsTF" layoutX="192.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Occupied Slots" />
       <ComboBox fx:id="directionCB" layoutX="192.0" layoutY="237.0" prefWidth="150.0" promptText="Direction  " />
       <Line endX="-100.0" endY="168.0" layoutX="504.0" layoutY="169.0" startX="-100.0" />
       <Label layoutX="434.0" layoutY="155.0" prefHeight="28.0" prefWidth="122.0" text="Remove Tent">
@@ -67,11 +66,10 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField fx:id="removeTentIdTF" layoutX="434.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" text="Tent ID" />
-      <TextField fx:id="reasonToRemoveTF" layoutX="433.0" layoutY="227.0" prefHeight="52.0" prefWidth="150.0" text="Reason TO Remove" />
-      <Button layoutX="300.0" layoutY="321.0" mnemonicParsing="false" onAction="#AddOnActionButton" text="Add " />
+      <TextField fx:id="removeTentIdTF" layoutX="434.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Tent ID" />
+      <TextField fx:id="reasonToRemoveTF" layoutX="433.0" layoutY="227.0" prefHeight="52.0" prefWidth="150.0" promptText="Reason To Remove" />
+      <Button layoutX="285.0" layoutY="292.0" mnemonicParsing="false" onAction="#AddOnActionButton" prefHeight="25.0" prefWidth="52.0" text="Add " />
       <Button layoutX="466.0" layoutY="318.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
-      <TextField fx:id="totalCapacityTF1" layoutX="19.0" layoutY="282.0" prefHeight="28.0" prefWidth="149.0" text="Free Slots" />
-      <ComboBox fx:id="statusCB" layoutX="192.0" layoutY="284.0" prefWidth="150.0" promptText="Status" />
+      <ComboBox fx:id="statusCB" layoutX="19.0" layoutY="279.0" prefWidth="150.0" promptText="Status" />
    </children>
 </AnchorPane>
