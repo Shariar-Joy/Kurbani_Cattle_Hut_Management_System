@@ -169,6 +169,18 @@ public class Hut_Manager_Goal2Controller
         }
 
     }
+    @javafx.fxml.FXML
+    public void cancelOnActionButton(ActionEvent actionEvent) {
+        tentIdTF.clear();
+        occupiedSlotsTF.clear();
+        totalCapacityTF.clear();
+        directionCB.setValue(null);
+        statusCB.setValue(null);
+        removeTentIdTF.clear();
+        reasonToRemoveTF.clear();
+        searchTF.clear();
+
+    }
 
 
     public  void showAlert(String title, String content) {
@@ -178,4 +190,6 @@ public class Hut_Manager_Goal2Controller
         alert.setContentText(content);
         alert.showAndWait();
     }
+
+
 }

@@ -57,8 +57,8 @@
          </font>
       </Label>
       <TextField fx:id="tentIdTF" layoutX="19.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Tent ID" />
-      <TextField fx:id="totalCapacityTF" layoutX="19.0" layoutY="235.0" prefHeight="28.0" prefWidth="149.0" promptText="Total Capacity " />
-      <TextField fx:id="occupiedSlotsTF" layoutX="192.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Occupied Slots" />
+      <TextField fx:id="totalCapacityTF" layoutX="193.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Total Capacity " />
+      <TextField fx:id="occupiedSlotsTF" layoutX="19.0" layoutY="239.0" prefHeight="28.0" prefWidth="149.0" promptText="Occupied Slots" />
       <ComboBox fx:id="directionCB" layoutX="192.0" layoutY="237.0" prefWidth="150.0" promptText="Direction  " />
       <Line endX="-100.0" endY="168.0" layoutX="504.0" layoutY="169.0" startX="-100.0" />
       <Label layoutX="434.0" layoutY="155.0" prefHeight="28.0" prefWidth="122.0" text="Remove Tent">
@@ -68,8 +68,9 @@
       </Label>
       <TextField fx:id="removeTentIdTF" layoutX="434.0" layoutY="194.0" prefHeight="28.0" prefWidth="149.0" promptText="Tent ID" />
       <TextField fx:id="reasonToRemoveTF" layoutX="433.0" layoutY="227.0" prefHeight="52.0" prefWidth="150.0" promptText="Reason To Remove" />
-      <Button layoutX="285.0" layoutY="292.0" mnemonicParsing="false" onAction="#AddOnActionButton" prefHeight="25.0" prefWidth="52.0" text="Add " />
-      <Button layoutX="466.0" layoutY="318.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
+      <Button layoutX="213.0" layoutY="292.0" mnemonicParsing="false" onAction="#AddOnActionButton" prefHeight="28.0" prefWidth="52.0" text="Add " />
+      <Button layoutX="466.0" layoutY="291.0" mnemonicParsing="false" onAction="#removeOnActionButton" prefHeight="28.0" prefWidth="59.0" text="Remove" />
       <ComboBox fx:id="statusCB" layoutX="19.0" layoutY="279.0" prefWidth="150.0" promptText="Status" />
+      <Button layoutX="288.0" layoutY="291.0" mnemonicParsing="false" onAction="#cancelOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Refresh" />
    </children>
 </AnchorPane>

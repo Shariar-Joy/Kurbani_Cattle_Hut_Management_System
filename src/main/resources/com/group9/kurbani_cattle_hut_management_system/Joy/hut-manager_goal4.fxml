@@ -6,21 +6,20 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal4Controller">
+<AnchorPane prefHeight="509.0" prefWidth="739.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal4Controller">
    <children>
-      <Label layoutX="34.0" layoutY="31.0" prefHeight="28.0" prefWidth="346.0" text="Goal 4: Oversee animal health &amp; quarantine actions">
+      <Label layoutX="17.0" layoutY="16.0" prefHeight="28.0" prefWidth="346.0" text="Goal 4: Oversee animal health &amp; quarantine actions">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="470.0" layoutY="367.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="497.0" layoutY="14.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+      <Button layoutX="584.0" layoutY="463.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="604.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="527.0" layoutY="47.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="485.0" layoutX="120.0" layoutY="88.0" startX="-96.0" />
+      <Button layoutX="634.0" layoutY="30.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="599.0" layoutX="119.0" layoutY="65.0" startX="-102.0" />
    </children>
 </AnchorPane>

@@ -4,6 +4,7 @@ module com.group9.kurbani_cattle_hut_management_system {
     requires javafx.base;
     requires javafx.graphics;
 //    requires com.group9.kurbani_cattle_hut_management_system;
+//    requires com.group9.kurbani_cattle_hut_management_system;
 
 
     opens com.group9.kurbani_cattle_hut_management_system to javafx.fxml;
