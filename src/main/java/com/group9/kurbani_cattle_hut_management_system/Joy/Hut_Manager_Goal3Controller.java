@@ -5,77 +5,42 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
 import java.io.IOException;
+import java.time.LocalDate;
 
 public class Hut_Manager_Goal3Controller
 {
     @javafx.fxml.FXML
-    private TableColumn tentIdCOL;
+    private TableColumn<AnimalOwner,String> ownerNameCOL;
     @javafx.fxml.FXML
-    private TableColumn ownerNameCOL;
+    private TableColumn<AnimalOwner, LocalDate> entryDateCOl;
     @javafx.fxml.FXML
-    private TableColumn directionCOL;
+    private TableColumn<AnimalOwner,String> ownerIdCOL;
     @javafx.fxml.FXML
-    private TableColumn entryDateCOl;
+    private TableColumn<AnimalOwner,String> animalTypeCOL;
     @javafx.fxml.FXML
-    private TableColumn ownerIdCOL;
+    private TableView<AnimalOwner> animalTableView;
     @javafx.fxml.FXML
-    private TextField ownerNidTF;
+    private TableColumn<AnimalOwner,Integer> askingPriceCOL;
     @javafx.fxml.FXML
-    private ComboBox animalTypeCB;
-    @javafx.fxml.FXML
-    private TextField colorTF;
-    @javafx.fxml.FXML
-    private TextField breedTF;
-    @javafx.fxml.FXML
-    private TableColumn totalCapacityCOL;
-    @javafx.fxml.FXML
-    private TextField animalIdTF;
-    @javafx.fxml.FXML
-    private TableColumn animalTypeCOL;
-    @javafx.fxml.FXML
-    private TableColumn occupiedSlotsCOL;
-    @javafx.fxml.FXML
-    private TableView animalTableView;
-    @javafx.fxml.FXML
-    private TextField ownerAddressTF;
-    @javafx.fxml.FXML
-    private TableColumn askingPriceCOL;
-    @javafx.fxml.FXML
-    private TextField weightTF;
-    @javafx.fxml.FXML
-    private TableColumn ageCOL;
-    @javafx.fxml.FXML
-    private TextField ownerPhone;
-    @javafx.fxml.FXML
-    private TextField ownerNameTF;
-    @javafx.fxml.FXML
-    private DatePicker entryDateDatePicker;
-    @javafx.fxml.FXML
-    private TextField askingPriceTF;
-    @javafx.fxml.FXML
-    private TextField ownerIdTF;
-    @javafx.fxml.FXML
-    private TableColumn freeSlotsCOL;
+    private TableColumn<AnimalOwner,Integer> ageCOL;
     @javafx.fxml.FXML
     private TextField searchTF1;
     @javafx.fxml.FXML
-    private TableColumn animalIdCOL;
+    private TableColumn<AnimalOwner,String> animalIdCOL;
     @javafx.fxml.FXML
-    private TableColumn ownerNidCOL;
+    private TableColumn<AnimalOwner,String> ownerNidCOL;
     @javafx.fxml.FXML
-    private TableColumn ownerPhoneCOL;
+    private TableColumn<AnimalOwner,String> ownerPhoneCOL;
     @javafx.fxml.FXML
-    private TextField searchTF;
+    private TableColumn<AnimalOwner,Integer> weightCOL;
     @javafx.fxml.FXML
-    private TableColumn weightCOL;
+    private TableColumn<AnimalOwner,String> breedCOL;
     @javafx.fxml.FXML
-    private TableColumn statusCOL;
+    private TableView<AnimalOwner> ownerTableView;
     @javafx.fxml.FXML
-    private TextField ageTF;
+    private TableColumn<AnimalOwner,String> ownerAddressCOL;
     @javafx.fxml.FXML
-    private ComboBox selectTentCB;
-    @javafx.fxml.FXML
-    private TableColumn breedCOL;
+    private TextField searchTF11;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -93,5 +58,15 @@ public class Hut_Manager_Goal3Controller
 
     @javafx.fxml.FXML
     public void searchOnActionButton(ActionEvent actionEvent) {
+    }
+
+    @javafx.fxml.FXML
+    public void ownerEditOnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal3_2.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void animalEditOnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager_goal3_1.fxml");
     }
 }

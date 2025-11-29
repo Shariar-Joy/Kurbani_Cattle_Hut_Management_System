@@ -1,26 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal7Controller">
+<AnchorPane prefHeight="742.0" prefWidth="893.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal7Controller">
    <children>
-      <Label layoutX="34.0" layoutY="31.0" prefHeight="28.0" prefWidth="346.0" text="Goal 7: Security, ID verification &amp; fraud prevention">
+      <Label layoutX="14.0" layoutY="17.0" prefHeight="28.0" prefWidth="346.0" text="Goal 7: Security, ID verification &amp; fraud prevention">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="470.0" layoutY="367.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="497.0" layoutY="14.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+      <Button layoutX="752.0" layoutY="704.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="751.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="527.0" layoutY="47.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="485.0" layoutX="120.0" layoutY="88.0" startX="-96.0" />
+      <Button layoutX="788.0" layoutY="33.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="756.0" layoutX="115.0" layoutY="66.0" startX="-100.0" />
+      <Label layoutX="126.0" layoutY="102.0" text="Request KYC Verification">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="userTypeCB" layoutX="133.0" layoutY="138.0" prefWidth="150.0" promptText="User Type" />
+      <TextField fx:id="requestKYCUserIDTF" layoutX="134.0" layoutY="181.0" promptText="User ID or Email" />
+      <Label layoutX="138.0" layoutY="228.0" text="Required Documents">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="nationalIDCheckBox" layoutX="84.0" layoutY="262.0" mnemonicParsing="false" text="National ID Card" />
+      <CheckBox fx:id="photoCheckBox" layoutX="84.0" layoutY="296.0" mnemonicParsing="false" text="Passport Size Photo" />
+      <CheckBox fx:id="addressCheckBox" layoutX="242.0" layoutY="262.0" mnemonicParsing="false" text="Address Proof" />
+      <CheckBox fx:id="licenseCheckBox" layoutX="242.0" layoutY="296.0" mnemonicParsing="false" text="Trade License (For Sellers)" />
+      <TextField fx:id="verificationMessageTF" layoutX="70.0" layoutY="333.0" prefHeight="52.0" prefWidth="295.0" promptText="Verification Message" />
+      <Button layoutX="151.0" layoutY="405.0" mnemonicParsing="false" onAction="#sendKYCOnActionButton" text="Send KYC Requesr" />
+      <Label layoutX="559.0" layoutY="102.0" text="Flag Suspicious Activity">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Line endX="-100.0" endY="648.0" layoutX="546.0" layoutY="59.0" startX="-100.0" />
+      <TextArea layoutX="485.0" layoutY="144.0" prefHeight="73.0" prefWidth="334.0" text="System Checks:&#10;    1. If the seller is a used multiple times&#10;    2. The manager can mark the seller as &quot;Under Review&quot;&#10;&#10;" />
+      <ComboBox fx:id="reasonToFlagCB" layoutX="561.0" layoutY="258.0" prefWidth="150.0" promptText="Reason To Flag" />
+      <TextField fx:id="flagSuspiciousUserIDTF" layoutX="562.0" layoutY="226.0" promptText="User ID or Email" />
+      <TextField fx:id="evidenceTF" layoutX="488.0" layoutY="333.0" prefHeight="52.0" prefWidth="295.0" promptText="Details / Evidence" />
+      <ComboBox fx:id="flagActionCB" layoutX="561.0" layoutY="292.0" prefWidth="150.0" promptText="Action to Take" />
+      <Button layoutX="603.0" layoutY="405.0" mnemonicParsing="false" onAction="#flagUserOnActionButton" text="Flag User" />
+      <Line endX="748.0" layoutX="130.0" layoutY="447.0" startX="-115.0" />
+      <Label layoutX="128.0" layoutY="457.0" prefHeight="20.0" prefWidth="164.0" text="Block or Unblock User">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="22.0" layoutY="483.0" prefHeight="73.0" prefWidth="398.0" text="System Behavior:&#10;    1. If the user is a seller, they will be barred from registering&#10;    2. Blocked users cannot log in or register animals until re-approved&#10;&#10;&#10;&#10;" />
+      <TextField fx:id="blockUserIDTF" layoutX="22.0" layoutY="569.0" promptText="User ID or Email" />
+      <ComboBox fx:id="blockActionCB" layoutX="265.0" layoutY="569.0" prefWidth="150.0" promptText="Action" />
+      <TextField fx:id="reasonToActionTF" layoutX="25.0" layoutY="610.0" prefHeight="52.0" prefWidth="398.0" promptText="Reason for Action" />
+      <Button layoutX="174.0" layoutY="682.0" mnemonicParsing="false" onAction="#blockOnActionButton" text="Block User" />
+      <Label layoutX="568.0" layoutY="457.0" prefHeight="20.0" prefWidth="164.0" text="Currently Blocked Users">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextArea layoutX="460.0" layoutY="483.0" prefHeight="73.0" prefWidth="280.0" text="S12350 - Suspicious Seller&#10;Blocked for: Multiple fake accounts detected&#10;Blocked: 3 days ago by Admin&#10;&#10;&#10;&#10;" />
+      <TextArea layoutX="460.0" layoutY="574.0" prefHeight="73.0" prefWidth="280.0" text="S12355 - Suspicious Seller&#10;Blocked for: Multiple fake accounts detected&#10;Blocked: 5 days ago by Admin&#10;&#10;&#10;&#10;" />
+      <Button layoutX="789.0" layoutY="507.0" mnemonicParsing="false" text="UnBlock" />
+      <Button layoutX="789.0" layoutY="598.0" mnemonicParsing="false" text="UnBlock" />
    </children>
 </AnchorPane>

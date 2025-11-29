@@ -2,25 +2,101 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="419.0" prefWidth="604.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Doctor_Goal7Controller">
+<AnchorPane prefHeight="960.0" prefWidth="1019.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Doctor_Goal7Controller">
    <children>
-      <Label layoutX="14.0" layoutY="15.0" prefHeight="28.0" prefWidth="349.0" text="Goal 7: Generate &amp; share health summary reports">
+      <Label layoutX="14.0" layoutY="12.0" prefHeight="28.0" prefWidth="349.0" text="Goal 7: Generate &amp; share health summary reports">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="461.0" layoutY="384.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="482.0" layoutY="12.0" prefHeight="34.0" prefWidth="122.0" text="Veterinary Doctor">
+      <Button layoutX="870.0" layoutY="920.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="883.0" layoutY="-3.0" prefHeight="34.0" prefWidth="122.0" text="Veterinary Doctor">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Button layoutX="518.0" layoutY="46.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="495.0" layoutX="105.0" layoutY="80.0" startX="-96.0" />
+      <Button layoutX="913.0" layoutY="28.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="894.0" layoutX="111.0" layoutY="61.0" startX="-96.0" />
+      <Label layoutX="347.0" layoutY="74.0" prefHeight="20.0" prefWidth="122.0" text="Medical Record">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="332.0" layoutY="279.0" prefHeight="20.0" prefWidth="151.0" text="Vaccination Records">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="vaccinationTableView" layoutX="12.0" layoutY="306.0" prefHeight="167.0" prefWidth="791.0">
+         <columns>
+            <TableColumn fx:id="animalIDCOL" prefWidth="75.0" text="Animal ID" />
+            <TableColumn fx:id="vaccineNameCOL" prefWidth="110.0" text="Vaccine Name" />
+            <TableColumn fx:id="doseNumberCOl" prefWidth="103.0" text="Dose Number" />
+            <TableColumn fx:id="dateAdministeredCOL" prefWidth="124.0" text="Date Adminstered" />
+            <TableColumn fx:id="nextDueDateCOL" prefWidth="98.0" text="Next Due Date" />
+            <TableColumn fx:id="statusCOL" prefWidth="71.0" text="Status" />
+         </columns>
+      </TableView>
+      <Label layoutX="323.0" layoutY="489.0" text="Quarantine Report">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="quarantineTableView" layoutX="13.0" layoutY="519.0" prefHeight="167.0" prefWidth="791.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+            <TableColumn fx:id="symptomsCOL" prefWidth="130.0" text="Symptoms" />
+            <TableColumn fx:id="diseaseCOL" minWidth="9.0" prefWidth="108.0" text="Disease" />
+            <TableColumn fx:id="isolationTimeCOL" minWidth="1.0" prefWidth="128.0" text=" Isolation Time" />
+            <TableColumn fx:id="isolationTentCOL" minWidth="1.0" prefWidth="121.0" text="Isolation Tent " />
+            <TableColumn fx:id="medicineCOL" minWidth="1.0" prefWidth="107.0" text=" Medicine" />
+         </columns>
+      </TableView>
+      <Label layoutX="332.0" layoutY="733.0" text=" Treatment Plan">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="treatmentTableView" layoutX="12.0" layoutY="753.0" prefHeight="167.0" prefWidth="791.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+            <TableColumn fx:id="diagnosisCOL" text="Diagnosis" />
+            <TableColumn fx:id="medicineCOL1" minWidth="9.0" prefWidth="142.0" text="Prescribed Medicine" />
+            <TableColumn fx:id="durationCOL" minWidth="9.0" prefWidth="197.0" text="Duration">
+               <columns>
+                  <TableColumn fx:id="startCOL" minWidth="9.0" prefWidth="76.0" text="Start " />
+                  <TableColumn fx:id="endCOL" minWidth="9.0" prefWidth="89.0" text="End" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="dosageCOL" prefWidth="145.0" text="Dosage">
+               <columns>
+                  <TableColumn fx:id="timeCOL" prefWidth="62.0" text="Time" />
+                  <TableColumn fx:id="daysCOL" prefWidth="76.0" text="Total Days" />
+               </columns>
+            </TableColumn>
+            <TableColumn fx:id="nextVisitCOL" prefWidth="91.0" text="Next visit date" />
+            <TableColumn fx:id="expectedRecoveryCOL" prefWidth="113.0" text="Expected recovery" />
+            <TableColumn fx:id="statusCOL1" prefWidth="59.0" text="Status" />
+         </columns>
+      </TableView>
+      <TableView fx:id="medicalRecordTableView" layoutX="12.0" layoutY="100.0" prefHeight="167.0" prefWidth="791.0">
+        <columns>
+          <TableColumn fx:id="medicalRecordAnimalIDCOL" prefWidth="115.0" text="Animal ID" />
+          <TableColumn fx:id="tempCOl" prefWidth="203.0" text="Temperature (°C)" />
+            <TableColumn fx:id="pulseCOl" prefWidth="133.0" text="Pulse rate (bpm)" />
+            <TableColumn fx:id="breathingCOL" minWidth="2.0" prefWidth="196.0" text="Breathing Rate (bpm)" />
+            <TableColumn fx:id="weightCOL" prefWidth="143.0" text="Weight (kg)" />
+        </columns>
+      </TableView>
+      <Button layoutX="870.0" layoutY="171.0" mnemonicParsing="false" onAction="#medicalReportOnActionButton" text="Export The Report" />
+      <Button layoutX="870.0" layoutY="383.0" mnemonicParsing="false" onAction="#vaccinationReportOnActionButton" text="Export The Report" />
+      <Button layoutX="870.0" layoutY="590.0" mnemonicParsing="false" onAction="#QuaratineReportOnActionButton" text="Export The Report" />
+      <Button layoutX="870.0" layoutY="824.0" mnemonicParsing="false" onAction="#treatmentReportOnActionButton" text="Export The Report" />
    </children>
 </AnchorPane>

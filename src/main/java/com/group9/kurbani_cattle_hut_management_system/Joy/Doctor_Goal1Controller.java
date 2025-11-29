@@ -24,7 +24,7 @@ public class Doctor_Goal1Controller
     @javafx.fxml.FXML
     private TextField searchTF;
     @javafx.fxml.FXML
-    private TableColumn statusCOL;
+    private TableColumn<AnimalOwner,String> statusCOL;
     @javafx.fxml.FXML
     private Button refreshOnActionButton;
 

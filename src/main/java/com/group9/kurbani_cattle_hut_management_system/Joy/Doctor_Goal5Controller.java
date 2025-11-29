@@ -20,4 +20,8 @@ public class Doctor_Goal5Controller
     public void goBackOnActionButton(ActionEvent actionEvent) throws IOException {
         BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/doctor-view.fxml");
     }
+
+    @javafx.fxml.FXML
+    public void refreshOnActionButton(ActionEvent actionEvent) {
+    }
 }
