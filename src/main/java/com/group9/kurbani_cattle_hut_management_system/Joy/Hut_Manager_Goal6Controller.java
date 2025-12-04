@@ -88,13 +88,10 @@ public class Hut_Manager_Goal6Controller
 
     @FXML
     public void chartOnActionButton(ActionEvent actionEvent) {
-//        ChartUtil.loadPieChart(
-//                pieChart,
-//                "Daily Transactions",
-//                new String[]{"Received", "Refund", "Total"},
-//                new double[]{5000, 3000, 2000}
-//        );
+        pieChart.getData().clear();
 
-
+        pieChart.getData().add(new PieChart.Data("Received",5000));
+        pieChart.getData().add(new PieChart.Data("Refund",3000));
+        pieChart.getData().add(new PieChart.Data("Total",2000));
     }
 }
