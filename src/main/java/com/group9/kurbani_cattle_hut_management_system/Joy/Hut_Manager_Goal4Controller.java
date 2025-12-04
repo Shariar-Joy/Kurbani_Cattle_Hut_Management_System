@@ -1,6 +1,9 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Quarantine;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Treatment;
+import com.group9.kurbani_cattle_hut_management_system.Utils.IDStoreUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
@@ -17,8 +20,6 @@ public class Hut_Manager_Goal4Controller
     @javafx.fxml.FXML
     private ComboBox<String> healthAnimalIDCB;
     @javafx.fxml.FXML
-    private TableView<Quarantine> healthTableView;
-    @javafx.fxml.FXML
     private TableColumn<Quarantine,String> healthStatusCOL;
     @javafx.fxml.FXML
     private TableView<Treatment> treatmentTableView;
@@ -30,9 +31,19 @@ public class Hut_Manager_Goal4Controller
     private TableColumn<Quarantine,String> tentNoCOL;
     @javafx.fxml.FXML
     private ComboBox<String> treatmentAnimalIDCB;
+    @javafx.fxml.FXML
+    private TableColumn<Quarantine,String> actionCOL;
+    @javafx.fxml.FXML
+    private TableColumn<Treatment,String> requestStatusCOL;
+    @javafx.fxml.FXML
+    private TableView<Quarantine> quarantineTableView;
+
+
 
     @javafx.fxml.FXML
     public void initialize() {
+        healthAnimalIDCB.setItems(IDStoreUtil.loadIDs("animal_ids.txt"));
+        treatmentAnimalIDCB.setItems(IDStoreUtil.loadIDs("animal_ids.txt"));
     }
 
     @javafx.fxml.FXML
@@ -51,6 +62,8 @@ public class Hut_Manager_Goal4Controller
 
     @javafx.fxml.FXML
     public void approveOnActionButton(ActionEvent actionEvent) {
+
+
     }
 
     @javafx.fxml.FXML

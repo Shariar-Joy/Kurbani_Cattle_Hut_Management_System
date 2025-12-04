@@ -11,34 +11,34 @@
 
 
 <AnchorPane prefHeight="370.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal3_1Controller">
-   <children>
-      <TextField fx:id="animalIdTF" layoutX="46.0" layoutY="111.0" prefHeight="28.0" prefWidth="149.0" promptText="Animal ID" />
-      <Label layoutX="140.0" layoutY="77.0" prefHeight="28.0" prefWidth="159.0" text="Animal Registration Edit">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="breedTF" layoutX="46.0" layoutY="156.0" prefHeight="28.0" prefWidth="149.0" promptText="Breed" />
-      <TextField fx:id="ageTF" layoutX="46.0" layoutY="201.0" prefHeight="28.0" prefWidth="149.0" promptText="Age" />
-      <TextField fx:id="weightTF" layoutX="219.0" layoutY="156.0" prefHeight="28.0" prefWidth="149.0" promptText="Weight (kg)" />
-      <TextField fx:id="colorTF" layoutX="219.0" layoutY="243.0" prefHeight="28.0" prefWidth="149.0" promptText="Color" />
-      <TextField fx:id="askingPriceTF" layoutX="219.0" layoutY="201.0" prefHeight="28.0" prefWidth="149.0" promptText="Asking Price" />
-      <DatePicker fx:id="entryDateDatePicker" layoutX="46.0" layoutY="243.0" prefHeight="28.0" prefWidth="149.0" promptText="Entry Date" />
-      <ComboBox fx:id="animalTypeCB" layoutX="219.0" layoutY="111.0" prefHeight="28.0" prefWidth="150.0" promptText="Animal Type" />
-      <Label layoutX="14.0" layoutY="15.0" prefHeight="28.0" prefWidth="346.0" text="Goal 3: Maintain animal master database">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="301.0" layoutY="321.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="325.0" layoutY="8.0" prefHeight="28.0" prefWidth="122.0" text="Hut Manager">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="355.0" layoutY="31.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="317.0" layoutX="115.0" layoutY="64.0" startX="-100.0" />
-      <Button layoutX="182.0" layoutY="296.0" mnemonicParsing="false" onAction="#saveOnActionButton" text="Save" />
-      <Button layoutX="15.0" layoutY="321.0" mnemonicParsing="false" onAction="#goBackToGoal3OnActionButton" text="Go Back to Goal 3" />
-   </children>
+    <children>
+        <TextField fx:id="animalIdTF" layoutX="46.0" layoutY="111.0" prefHeight="28.0" prefWidth="149.0" promptText="Animal ID" />
+        <Label layoutX="140.0" layoutY="77.0" prefHeight="28.0" prefWidth="159.0" text="Animal Registration Edit">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="breedTF" layoutX="46.0" layoutY="156.0" prefHeight="28.0" prefWidth="149.0" promptText="Breed" />
+        <TextField fx:id="ageTF" layoutX="46.0" layoutY="201.0" prefHeight="28.0" prefWidth="149.0" promptText="Age" />
+        <TextField fx:id="weightTF" layoutX="219.0" layoutY="156.0" prefHeight="28.0" prefWidth="149.0" promptText="Weight (kg)" />
+        <TextField fx:id="colorTF" layoutX="219.0" layoutY="243.0" prefHeight="28.0" prefWidth="149.0" promptText="Color" />
+        <TextField fx:id="askingPriceTF" layoutX="219.0" layoutY="201.0" prefHeight="28.0" prefWidth="149.0" promptText="Asking Price" />
+        <DatePicker fx:id="entryDateDatePicker" layoutX="46.0" layoutY="243.0" prefHeight="28.0" prefWidth="149.0" promptText="Entry Date" />
+        <ComboBox fx:id="animalTypeCB" layoutX="219.0" layoutY="111.0" prefHeight="28.0" prefWidth="150.0" promptText="Animal Type" />
+        <Label layoutX="14.0" layoutY="15.0" prefHeight="28.0" prefWidth="346.0" text="Goal 3: Maintain animal master database">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="301.0" layoutY="321.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="325.0" layoutY="8.0" prefHeight="28.0" prefWidth="122.0" text="Hut Manager">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="355.0" layoutY="31.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="317.0" layoutX="115.0" layoutY="64.0" startX="-100.0" />
+        <Button layoutX="182.0" layoutY="296.0" mnemonicParsing="false" onAction="#saveOnActionButton" text="Save" />
+        <Button layoutX="15.0" layoutY="321.0" mnemonicParsing="false" onAction="#goBackToGoal3OnActionButton" text="Go Back to Goal 3" />
+    </children>
 </AnchorPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="666.0" prefWidth="519.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Doctor_Goal5_1Controller">
+    <children>
+        <Label layoutX="18.0" layoutY="16.0" prefHeight="28.0" prefWidth="349.0" text="Goal 5_1: Approve animals for sale (health clearance)">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="375.0" layoutY="627.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="397.0" layoutY="-1.0" prefHeight="34.0" prefWidth="122.0" text="Veterinary Doctor">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="427.0" layoutY="32.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="401.0" layoutX="114.0" layoutY="62.0" startX="-96.0" />
+        <Button layoutX="427.0" layoutY="77.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refreash" />
+        <Label layoutX="161.0" layoutY="77.0" prefHeight="25.0" prefWidth="198.0" text="Inspect and Verify Health">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <CheckBox fx:id="physicalInspectionCheckBox" layoutX="18.0" layoutY="122.0" mnemonicParsing="false" text="Physical inspection completed - No visible injuries or illness">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="vaccinationCheckBox" layoutX="18.0" layoutY="155.0" mnemonicParsing="false" text="Vaccination records verified and up-to-date">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="requiredTestsCheckBox" layoutX="18.0" layoutY="188.0" mnemonicParsing="false" text="Required tests completed (Blood, Disease screening)">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </CheckBox>
+        <CheckBox fx:id="behaviorCheckBox" layoutX="18.0" layoutY="222.0" mnemonicParsing="false" text="Behavior assessment - Animal is calm and stable">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </CheckBox>
+        <Button layoutX="182.0" layoutY="592.0" mnemonicParsing="false" onAction="#saveCertificateOnActionButton" text="Save Clearance Form" />
+        <Label layoutX="161.0" layoutY="349.0" prefHeight="25.0" prefWidth="190.0" text="Generate Health Certificate">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="statusCB" layoutX="18.0" layoutY="254.0" prefWidth="150.0" promptText="Select Status" />
+        <TextField fx:id="finalWeightTF" layoutX="71.0" layoutY="441.0" prefHeight="25.0" prefWidth="149.0" promptText="Enter Final Weight " />
+        <TextField fx:id="remarksTF" layoutX="71.0" layoutY="486.0" prefHeight="25.0" prefWidth="150.0" promptText="Remarks" />
+        <ComboBox fx:id="overallConditionCB" layoutX="72.0" layoutY="536.0" prefHeight="25.0" prefWidth="169.0" promptText="Condition Score (1-10)" />
+        <Button layoutX="16.0" layoutY="627.0" mnemonicParsing="false" onAction="#goBackToGoal5OnActionButton" text="Go Back to Goal 5" />
+        <Button layoutX="196.0" layoutY="308.0" mnemonicParsing="false" onAction="#saveClearanceOnActionButton" text="Save Clearance Form" />
+        <ComboBox fx:id="animalIdCB" layoutX="71.0" layoutY="396.0" prefWidth="150.0" promptText="Animal ID" />
+        <TextField fx:id="breedTF" layoutX="277.0" layoutY="486.0" promptText="Breed" />
+        <TextField fx:id="doctorNameTF" layoutX="277.0" layoutY="441.0" promptText="Doctor Name" />
+        <DatePicker fx:id="dateDatepicker" layoutX="277.0" layoutY="536.0" prefHeight="25.0" prefWidth="149.0" promptText="Date" />
+        <TextField fx:id="certificateTF" layoutX="277.0" layoutY="396.0" promptText="Certificate No" />
+    </children>
+</AnchorPane>

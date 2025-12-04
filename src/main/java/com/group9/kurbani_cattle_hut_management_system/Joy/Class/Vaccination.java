@@ -1,8 +1,9 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Vaccination {
+public class Vaccination implements Serializable {
 
     private String animalId;
     private String vaccineName;

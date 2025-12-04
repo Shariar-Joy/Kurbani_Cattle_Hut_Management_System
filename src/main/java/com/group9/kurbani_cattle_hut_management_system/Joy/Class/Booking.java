@@ -1,8 +1,9 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Booking {
+public class Booking implements Serializable {
     private String bookingID;
     private String ownerName;
     private int paymentAmount;
@@ -81,3 +82,4 @@ public class Booking {
                 '}';
     }
 }
+

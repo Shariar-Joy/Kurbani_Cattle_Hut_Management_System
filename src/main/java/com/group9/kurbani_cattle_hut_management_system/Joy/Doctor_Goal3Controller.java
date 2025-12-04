@@ -1,14 +1,20 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Quarantine;
+import com.group9.kurbani_cattle_hut_management_system.Utils.AlertUtil;
+import com.group9.kurbani_cattle_hut_management_system.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Utils.IDStoreUtil;
+import com.group9.kurbani_cattle_hut_management_system.Utils.RefreshUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Doctor_Goal3Controller
 {
@@ -19,7 +25,7 @@ public class Doctor_Goal3Controller
     @javafx.fxml.FXML
     private TextField diseaseTF;
     @javafx.fxml.FXML
-    private TableColumn<Quarantine, LocalDate> isolationTentCOL;
+    private TableColumn<Quarantine, String> isolationTentCOL;
     @javafx.fxml.FXML
     private TextField isolationTentTF;
     @javafx.fxml.FXML
@@ -33,12 +39,21 @@ public class Doctor_Goal3Controller
     @javafx.fxml.FXML
     private TextField medicineTF;
     @javafx.fxml.FXML
-    private TableColumn<Quarantine,LocalDate> isolationTimeCOL;
+    private TableColumn<Quarantine,String> isolationTimeCOL;
     @javafx.fxml.FXML
     private ComboBox<String> animalIDCB;
 
+    private final ArrayList<Quarantine> quarantineList = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void initialize() {
+        animalIDCB.setItems(IDStoreUtil.loadIDs("animal_ids.txt"));
+
+        symptomsCOL.setCellValueFactory(new PropertyValueFactory<>("symptoms"));
+        diseaseCOL.setCellValueFactory(new PropertyValueFactory<>("disease"));
+        medicineCOL.setCellValueFactory(new PropertyValueFactory<>("medicine"));
+        isolationTentCOL.setCellValueFactory(new PropertyValueFactory<>("isolationTent"));
+        isolationTimeCOL.setCellValueFactory(new PropertyValueFactory<>("isolationTime"));
     }
 
     @javafx.fxml.FXML
@@ -53,10 +68,30 @@ public class Doctor_Goal3Controller
 
     @javafx.fxml.FXML
     public void createOnActionButton(ActionEvent actionEvent) {
+        String animalID = animalIDCB.getValue();
+        String symptoms = symptomsTF.getText();
+        String disease = diseaseTF.getText();
+        String medicine = medicineTF.getText();
+        String isolationTent = isolationTentTF.getText();
+        String isolationTime = isolationTimeTF.getText();
+
+        if(animalID == null || animalID.isEmpty() ||
+                symptoms.isEmpty() || disease.isEmpty() || medicine.isEmpty() ||
+                isolationTent.isEmpty() || isolationTime.isEmpty()) {
+            System.out.println("Please fill in all fields.");
+            return;
+        }
+        Quarantine quarantine = new Quarantine(null,symptoms, disease,medicine, isolationTent, isolationTime);
+        quarantineList.add(quarantine);
+        quarantineTableView.getItems().addAll(quarantineList);
+        AlertUtil.showInfo("Success", "Quarantine record created successfully.");
+        FilesUtil.saveObject("data/quarantines.bin", quarantineList);
+
+
     }
 
     @javafx.fxml.FXML
     public void refreshOnActionButton(ActionEvent actionEvent) {
-
+        RefreshUtil.clearFields(symptomsTF, diseaseTF, medicineTF, isolationTentTF, isolationTimeTF);
     }
 }

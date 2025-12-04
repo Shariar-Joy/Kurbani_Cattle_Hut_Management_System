@@ -1,16 +1,16 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
-public class Quarantine {
+public class Quarantine implements Serializable  {
     private String animalId;
     private String symptoms;
     private String disease;
-    private LocalDate isolationTime;
-    private LocalDate isolationTent;
+    private String isolationTime;
+    private String isolationTent;
     private String medicine;
 
-    public Quarantine(String animalId, String symptoms, String disease, LocalDate isolationTime, LocalDate isolationTent, String medicine) {
+    public Quarantine(String animalId, String symptoms, String disease, String isolationTime, String isolationTent, String medicine) {
         this.animalId = animalId;
         this.symptoms = symptoms;
         this.disease = disease;
@@ -43,19 +43,19 @@ public class Quarantine {
         this.disease = disease;
     }
 
-    public LocalDate getIsolationTime() {
+    public String getIsolationTime() {
         return isolationTime;
     }
 
-    public void setIsolationTime(LocalDate isolationTime) {
+    public void setIsolationTime(String isolationTime) {
         this.isolationTime = isolationTime;
     }
 
-    public LocalDate getIsolationTent() {
+    public String getIsolationTent() {
         return isolationTent;
     }
 
-    public void setIsolationTent(LocalDate isolationTent) {
+    public void setIsolationTent(String isolationTent) {
         this.isolationTent = isolationTent;
     }
 
@@ -67,16 +67,16 @@ public class Quarantine {
         this.medicine = medicine;
     }
 
-
     @Override
     public String toString() {
         return "Quarantine{" +
                 "animalId='" + animalId + '\'' +
                 ", symptoms='" + symptoms + '\'' +
                 ", disease='" + disease + '\'' +
-                ", isolationTime=" + isolationTime +
-                ", isolationTent=" + isolationTent +
+                ", isolationTime='" + isolationTime + '\'' +
+                ", isolationTent='" + isolationTent + '\'' +
                 ", medicine='" + medicine + '\'' +
                 '}';
     }
 }
+

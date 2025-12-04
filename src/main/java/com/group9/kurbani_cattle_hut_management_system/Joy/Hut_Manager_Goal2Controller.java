@@ -1,12 +1,15 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Tent;
+import com.group9.kurbani_cattle_hut_management_system.Utils.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Hut_Manager_Goal2Controller
 {
@@ -53,8 +56,8 @@ public class Hut_Manager_Goal2Controller
     public void initialize() {
         directionCB.getItems().addAll("East","West","North","South");
         statusCB.getItems().addAll("Full","Free","Maintenance","Occupied");
-        animalIdCB.getItems().addAll("");
-        tentIdCB.getItems().addAll("Tent 1","Tent 2", "Tent 3", "Tent 4", "Tent 5");
+        animalIdCB.setItems(IDStoreUtil.loadIDs("animal_ids.txt"));
+        tentIdCB.setItems(IDStoreUtil.loadIDs("tent_ids.txt"));
 
         tentIdCOL.setCellValueFactory(new PropertyValueFactory<>("tentID"));
         occupiedSlotsCOL.setCellValueFactory(new PropertyValueFactory<>("occupiedSloats"));
@@ -67,27 +70,7 @@ public class Hut_Manager_Goal2Controller
 
     @javafx.fxml.FXML
     public void searchOnActionButton(ActionEvent actionEvent) {
-        if(searchTF.getText().isEmpty()){
-            showAlert("Error","Please enter Tent ID to search.");
-            return;
-        }
-        if(tentTableView.getItems().isEmpty()){
-            showAlert("No Data","No data available to search.");
-            return;
-        }
-        ArrayList<Tent> searchResults = new ArrayList<>();
-        String tentIdToSearch = searchTF.getText().trim();
-        for(Tent tent : tentList) {
-            if (tent.getTentID().equalsIgnoreCase(tentIdToSearch)) {
-                searchResults.add(tent);
-            }
-        }
-        if (searchResults.isEmpty()) {
-            showAlert("Not Found", "No tent found with ID: " + tentIdToSearch);
-        } else {
-            tentTableView.getItems().setAll(searchResults);
-        }
-
+        List<Tent> searchResults = SearchUtil.searchAndValidate(searchTF, tentList, Tent::getTentID);
         tentTableView.getItems().clear();
         tentTableView.getItems().addAll(searchResults);
 
@@ -95,7 +78,10 @@ public class Hut_Manager_Goal2Controller
 
     @javafx.fxml.FXML
     public void AddOnActionButton(ActionEvent actionEvent) {
-        String tentID = tentIdTF.getText();
+        String tentID = IDGenerator.generateTentID();
+        tentIdTF.setText(tentID);
+        IDStoreUtil.saveID("tent_ids.txt", tentID);
+
         int occupiedSlots = 0;
         int totalCapacity = 0;
         int freeSlots = 0;
@@ -106,31 +92,58 @@ public class Hut_Manager_Goal2Controller
             occupiedSlots = Integer.parseInt(occupiedSlotsTF.getText().trim());
             freeSlots = totalCapacity - occupiedSlots;
         } catch (Exception e){
-            showAlert("Input Error", "Please enter valid numbers for capacity and occupied slots.");
+            AlertUtil.showError("Input Error", "Please enter valid numbers for capacity and occupied slots.");
             return;
         }
 
         if(tentID.isEmpty() || direction == null || status == null){
-            showAlert("Input Error", "Please fill all the fields.");
+            AlertUtil.showError("Input Error", "Please fill all the fields.");
             return;
         }
 
         for(Tent tent : tentList){
             if(tent.getTentID().equalsIgnoreCase(tentID)){
-                showAlert("Duplicate Tent", "A tent with this ID already exists.");
+                AlertUtil.showError("Duplicate Tent", "A tent with this ID already exists.");
                 return;
             }
         }
 
         Tent newTent = new Tent(tentID, occupiedSlots, totalCapacity, freeSlots,direction, status);
         tentList.add(newTent);
-        showAlert("Success", "Tent added successfully.");
+        AlertUtil.showInfo("Success", "Tent added successfully.");
         tentTableView.getItems().clear();
         tentTableView.getItems().addAll(tentList);
+        FilesUtil.saveObject("data/tents.bin", tentList);
     }
 
     @javafx.fxml.FXML
     public void moveOnActionButton(ActionEvent actionEvent) {
+        String selectedAnimalID = animalIdCB.getValue();
+        String selectedTentID = tentIdCB.getValue();
+
+        if(selectedAnimalID == null || selectedTentID == null){
+            AlertUtil.showError("Input Error", "Please select both Animal ID and Tent ID.");
+            return;
+        }
+
+        boolean foundTent = false;
+        for(Tent tent : tentList) {
+            if (tent.getTentID().equalsIgnoreCase(selectedTentID)) {
+                foundTent = true;
+                if (tent.getFreeSlots() > 0) {
+                    tent.setOccupiedSloats(tent.getOccupiedSloats() + 1);
+                    tent.setFreeSlots(tent.getTotalCapacity() - tent.getOccupiedSloats());
+                    AlertUtil.showInfo("Success", "Animal ID: " + selectedAnimalID + " moved to Tent ID: " + selectedTentID + " successfully.");
+                    tentTableView.refresh();
+                } else {
+                    AlertUtil.showError("Full Tent", "The selected tent is full. Cannot move the animal.");
+                }
+                break;
+            }
+        }
+        if(!foundTent){
+            AlertUtil.showError("Not Found", "No tent found with ID: " + selectedTentID);
+        }
     }
 
 
@@ -149,14 +162,14 @@ public class Hut_Manager_Goal2Controller
         String tentIDToRemove = removeTentIdTF.getText().trim();
 
         if(tentIDToRemove.isEmpty()){
-            showAlert("Input Error", "Please enter Tent ID to remove.");
+            AlertUtil.showError("Input Error", "Please enter Tent ID to remove.");
             return;
         } else {
             boolean found = false;
             for(Tent tent : tentList){
                 if(tent.getTentID().equalsIgnoreCase(tentIDToRemove)){
                     tentList.remove(tent);
-                    showAlert("Success", "Tent with ID: " + tentIDToRemove + " removed successfully.");
+                    AlertUtil.showInfo("Success", "Tent with ID: " + tentIDToRemove + " removed successfully.");
                     tentTableView.getItems().clear();
                     tentTableView.getItems().addAll(tentList);
                     found = true;
@@ -164,32 +177,17 @@ public class Hut_Manager_Goal2Controller
                 }
             }
             if(!found){
-                showAlert("Not Found", "No tent found with ID: " + tentIDToRemove);
+                AlertUtil.showError("Not Found", "No tent found with ID: " + tentIDToRemove);
             }
         }
 
     }
     @javafx.fxml.FXML
     public void cancelOnActionButton(ActionEvent actionEvent) {
-        tentIdTF.clear();
-        occupiedSlotsTF.clear();
-        totalCapacityTF.clear();
-        directionCB.setValue(null);
-        statusCB.setValue(null);
-        removeTentIdTF.clear();
-        reasonToRemoveTF.clear();
-        searchTF.clear();
+        RefreshUtil.clearFields(tentIdTF,totalCapacityTF,occupiedSlotsTF, removeTentIdTF,reasonToRemoveTF);
+        RefreshUtil.clearComboBoxes(directionCB,statusCB,animalIdCB,tentIdCB);
+
 
     }
-
-
-    public  void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(content);
-        alert.showAndWait();
-    }
-
 
 }

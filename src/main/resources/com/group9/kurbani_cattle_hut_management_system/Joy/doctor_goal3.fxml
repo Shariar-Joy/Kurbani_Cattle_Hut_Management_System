@@ -12,48 +12,48 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="814.0" prefWidth="619.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Doctor_Goal3Controller">
-   <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="349.0" text="Goal 3: Flag and manage contagious/critical cases">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="470.0" layoutY="769.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="497.0" prefHeight="34.0" prefWidth="122.0" text="Veterinary Doctor">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="527.0" layoutY="30.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="499.0" layoutX="111.0" layoutY="63.0" startX="-96.0" />
-      <Button layoutX="527.0" layoutY="73.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refresh" />
-      <Label layoutX="263.0" layoutY="77.0" text="Quarantine Report">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="animalIDCB" layoutX="250.0" layoutY="104.0" prefWidth="150.0" promptText="Select Animal ID" />
-      <TextField fx:id="symptomsTF" layoutX="143.0" layoutY="145.0" prefHeight="61.0" prefWidth="368.0" promptText="Contagious Symptoms" />
-      <TextField fx:id="diseaseTF" layoutX="144.0" layoutY="222.0" prefHeight="42.0" prefWidth="368.0" promptText="Suspected Disease" />
-      <TextField fx:id="isolationTimeTF" layoutX="144.0" layoutY="275.0" prefHeight="34.0" prefWidth="179.0" promptText="Recommended Isolation Time" />
-      <TextField fx:id="isolationTentTF" layoutX="325.0" layoutY="275.0" prefHeight="34.0" prefWidth="185.0" promptText="Isolation Tent Recommendation" />
-      <TextField fx:id="medicineTF" layoutX="141.0" layoutY="322.0" prefHeight="42.0" prefWidth="368.0" promptText="Prescribed Medicine" />
-      <TextArea layoutX="99.0" layoutY="376.0" prefHeight="54.0" prefWidth="459.0" text="                                                     Quarantine Alert&#10;Saving this report will notify the Hut Manager and flag the animal for isolation." />
-      <Button layoutX="239.0" layoutY="441.0" mnemonicParsing="false" onAction="#createOnActionButton" prefHeight="34.0" prefWidth="179.0" text="Create Quarantine Report" />
-      <TableView fx:id="quarantineTableView" layoutX="14.0" layoutY="545.0" prefHeight="200.0" prefWidth="596.0">
-        <columns>
-          <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
-            <TableColumn fx:id="symptomsCOL" prefWidth="130.0" text="Symptoms" />
-            <TableColumn fx:id="diseaseCOL" minWidth="9.0" prefWidth="108.0" text="Disease" />
-            <TableColumn fx:id="isolationTimeCOL" minWidth="1.0" prefWidth="128.0" text=" Isolation Time" />
-            <TableColumn fx:id="isolationTentCOL" minWidth="1.0" prefWidth="121.0" text="Isolation Tent " />
-            <TableColumn fx:id="medicineCOL" minWidth="1.0" prefWidth="107.0" text=" Medicine" />
-        </columns>
-      </TableView>
-      <Label layoutX="15.0" layoutY="504.0" prefHeight="34.0" prefWidth="247.0" text="Quarantined Animals - Daily Monitoring">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-   </children>
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" prefHeight="28.0" prefWidth="349.0" text="Goal 3: Flag and manage contagious/critical cases">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="470.0" layoutY="769.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="497.0" prefHeight="34.0" prefWidth="122.0" text="Veterinary Doctor">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="527.0" layoutY="30.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="499.0" layoutX="111.0" layoutY="63.0" startX="-96.0" />
+        <Button layoutX="527.0" layoutY="73.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refresh" />
+        <Label layoutX="263.0" layoutY="77.0" text="Quarantine Report">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="animalIDCB" layoutX="250.0" layoutY="104.0" prefWidth="150.0" promptText="Select Animal ID" />
+        <TextField fx:id="symptomsTF" layoutX="143.0" layoutY="145.0" prefHeight="61.0" prefWidth="368.0" promptText="Contagious Symptoms" />
+        <TextField fx:id="diseaseTF" layoutX="144.0" layoutY="222.0" prefHeight="42.0" prefWidth="368.0" promptText="Suspected Disease" />
+        <TextField fx:id="isolationTimeTF" layoutX="144.0" layoutY="275.0" prefHeight="34.0" prefWidth="179.0" promptText="Recommended Isolation Time" />
+        <TextField fx:id="isolationTentTF" layoutX="325.0" layoutY="275.0" prefHeight="34.0" prefWidth="185.0" promptText="Isolation Tent Recommendation" />
+        <TextField fx:id="medicineTF" layoutX="141.0" layoutY="322.0" prefHeight="42.0" prefWidth="368.0" promptText="Prescribed Medicine" />
+        <TextArea layoutX="99.0" layoutY="376.0" prefHeight="54.0" prefWidth="459.0" text="                                                     Quarantine Alert&#10;Saving this report will notify the Hut Manager and flag the animal for isolation." />
+        <Button layoutX="239.0" layoutY="441.0" mnemonicParsing="false" onAction="#createOnActionButton" prefHeight="34.0" prefWidth="179.0" text="Create Quarantine Report" />
+        <TableView fx:id="quarantineTableView" layoutX="14.0" layoutY="545.0" prefHeight="200.0" prefWidth="596.0">
+            <columns>
+                <TableColumn minWidth="0.0" prefWidth="0.0" text="C2" />
+                <TableColumn fx:id="symptomsCOL" prefWidth="130.0" text="Symptoms" />
+                <TableColumn fx:id="diseaseCOL" minWidth="9.0" prefWidth="108.0" text="Disease" />
+                <TableColumn fx:id="isolationTimeCOL" minWidth="1.0" prefWidth="128.0" text=" Isolation Time" />
+                <TableColumn fx:id="isolationTentCOL" minWidth="1.0" prefWidth="121.0" text="Isolation Tent " />
+                <TableColumn fx:id="medicineCOL" minWidth="1.0" prefWidth="107.0" text=" Medicine" />
+            </columns>
+        </TableView>
+        <Label layoutX="15.0" layoutY="504.0" prefHeight="34.0" prefWidth="247.0" text="Quarantined Animals - Daily Monitoring">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+    </children>
 </AnchorPane>

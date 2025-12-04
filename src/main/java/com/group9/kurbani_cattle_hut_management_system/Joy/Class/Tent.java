@@ -1,6 +1,8 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
-public class Tent {
+import java.io.Serializable;
+
+public class Tent implements Serializable {
     private String tentID;
     private int occupiedSlots;
     private int totalCapacity;
@@ -79,3 +81,4 @@ public class Tent {
                 '}';
     }
 }
+

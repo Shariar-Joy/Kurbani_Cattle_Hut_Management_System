@@ -1,8 +1,10 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
+
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class AnimalOwner {
+public class Animal implements Serializable {
     private String animalID;
     private String animalType;
     private String breed;
@@ -14,13 +16,7 @@ public class AnimalOwner {
     private String tent;
     private String status;
 
-    private String ownerID;
-    private String ownerName;
-    private String ownerNID;
-    private String ownerAddress;
-    private String ownerPhone;
-
-    public AnimalOwner(String animalID, String animalType, String breed, int weight, int age, int askingPrice, LocalDate entryDate, String color, String tent, String status, String ownerID, String ownerName, String ownerNID, String ownerAddress, String ownerPhone) {
+    public Animal(String animalID, String animalType, String breed, int weight, int age, int askingPrice, LocalDate entryDate, String color, String tent, String status) {
         this.animalID = animalID;
         this.animalType = animalType;
         this.breed = breed;
@@ -31,14 +27,7 @@ public class AnimalOwner {
         this.color = color;
         this.tent = tent;
         this.status = status;
-
-        this.ownerID = ownerID;
-        this.ownerName = ownerName;
-        this.ownerNID = ownerNID;
-        this.ownerAddress = ownerAddress;
-        this.ownerPhone = ownerPhone;
     }
-
 
     public String getAnimalID() {
         return animalID;
@@ -120,47 +109,6 @@ public class AnimalOwner {
         this.status = status;
     }
 
-    public String getOwnerID() {
-        return ownerID;
-    }
-
-    public void setOwnerID(String ownerID) {
-        this.ownerID = ownerID;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public String getOwnerNID() {
-        return ownerNID;
-    }
-
-    public void setOwnerNID(String ownerNID) {
-        this.ownerNID = ownerNID;
-    }
-
-    public String getOwnerAddress() {
-        return ownerAddress;
-    }
-
-    public void setOwnerAddress(String ownerAddress) {
-        this.ownerAddress = ownerAddress;
-    }
-
-    public String getOwnerPhone() {
-        return ownerPhone;
-    }
-
-    public void setOwnerPhone(String ownerPhone) {
-        this.ownerPhone = ownerPhone;
-    }
-
-
     @Override
     public String toString() {
         return "AnimalOwner{" +
@@ -174,11 +122,6 @@ public class AnimalOwner {
                 ", color='" + color + '\'' +
                 ", tent='" + tent + '\'' +
                 ", status='" + status + '\'' +
-                ", ownerID='" + ownerID + '\'' +
-                ", ownerName='" + ownerName + '\'' +
-                ", ownerNID='" + ownerNID + '\'' +
-                ", ownerAddress='" + ownerAddress + '\'' +
-                ", ownerPhone='" + ownerPhone + '\'' +
                 '}';
     }
 }
