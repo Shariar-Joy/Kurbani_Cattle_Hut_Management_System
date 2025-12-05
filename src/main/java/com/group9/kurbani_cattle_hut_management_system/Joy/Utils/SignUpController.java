@@ -1,0 +1,39 @@
+package com.group9.kurbani_cattle_hut_management_system.Joy.Utils;
+
+import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import javafx.event.ActionEvent;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+
+import java.io.IOException;
+
+public class SignUpController
+{
+    @javafx.fxml.FXML
+    private TextField fullNameTF;
+    @javafx.fxml.FXML
+    private TextField phoneTF;
+    @javafx.fxml.FXML
+    private ComboBox<String> roleCB;
+    @javafx.fxml.FXML
+    private TextField emailTF;
+    @javafx.fxml.FXML
+    private TextField hutAddressTF;
+    @javafx.fxml.FXML
+    private TextField passwordTF;
+    @javafx.fxml.FXML
+    private TextField confirmPasswordTF;
+
+    @javafx.fxml.FXML
+    public void initialize() {
+    }
+
+    @javafx.fxml.FXML
+    public void loginOnActionButton(ActionEvent actionEvent) throws IOException {
+        BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/login.fxml");
+    }
+
+    @javafx.fxml.FXML
+    public void signUpOnActionButton(ActionEvent actionEvent) {
+    }
+}

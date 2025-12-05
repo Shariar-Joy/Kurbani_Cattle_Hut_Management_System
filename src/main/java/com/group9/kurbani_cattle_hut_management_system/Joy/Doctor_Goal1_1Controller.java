@@ -2,9 +2,9 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Medical_Records;
-import com.group9.kurbani_cattle_hut_management_system.Utils.FilesUtil;
-import com.group9.kurbani_cattle_hut_management_system.Utils.IDStoreUtil;
-import com.group9.kurbani_cattle_hut_management_system.Utils.RefreshUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.IDStoreUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.RefreshUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 

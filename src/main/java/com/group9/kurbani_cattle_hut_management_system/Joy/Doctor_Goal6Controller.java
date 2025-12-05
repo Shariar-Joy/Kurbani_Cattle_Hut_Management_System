@@ -1,8 +1,8 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
-import com.group9.kurbani_cattle_hut_management_system.Utils.AlertUtil;
-import com.group9.kurbani_cattle_hut_management_system.Utils.IDStoreUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.IDStoreUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;

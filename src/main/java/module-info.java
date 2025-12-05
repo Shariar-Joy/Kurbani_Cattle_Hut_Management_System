@@ -38,8 +38,8 @@ module com.group9.kurbani_cattle_hut_management_system {
         opens com.group9.kurbani_cattle_hut_management_system.Joy to javafx.fxml;
         exports com.group9.kurbani_cattle_hut_management_system.Ishmam;
         opens com.group9.kurbani_cattle_hut_management_system.Ishmam to javafx.fxml;
-        exports com.group9.kurbani_cattle_hut_management_system.Utils;
-        opens com.group9.kurbani_cattle_hut_management_system.Utils to javafx.fxml;
+        exports com.group9.kurbani_cattle_hut_management_system.Joy.Utils;
+        opens com.group9.kurbani_cattle_hut_management_system.Joy.Utils to javafx.fxml;
 //    exports com.group9.kurbani_cattle_hut_management_system.MainController;
 //    opens com.group9.kurbani_cattle_hut_management_system.MainController to javafx.fxml;
 //    exports com.group9.kurbani_cattle_hut_management_system.CommonClass;

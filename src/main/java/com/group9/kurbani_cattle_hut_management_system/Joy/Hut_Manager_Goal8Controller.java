@@ -4,7 +4,7 @@ import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Tent;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Booking;
-import com.group9.kurbani_cattle_hut_management_system.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;

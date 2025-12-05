@@ -2,7 +2,7 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Booking;
-import com.group9.kurbani_cattle_hut_management_system.Utils.*;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.*;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;

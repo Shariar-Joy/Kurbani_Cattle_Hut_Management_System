@@ -1,4 +1,4 @@
-package com.group9.kurbani_cattle_hut_management_system.Utils;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Utils;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

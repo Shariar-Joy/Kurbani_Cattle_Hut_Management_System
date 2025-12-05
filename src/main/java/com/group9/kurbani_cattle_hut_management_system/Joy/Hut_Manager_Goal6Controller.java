@@ -1,7 +1,7 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
-import com.group9.kurbani_cattle_hut_management_system.Utils.*;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.chart.PieChart;
@@ -9,8 +9,6 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Hut_Manager_Goal6Controller
 {

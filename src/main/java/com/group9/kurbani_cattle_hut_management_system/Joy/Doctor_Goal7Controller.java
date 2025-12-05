@@ -5,7 +5,7 @@ import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Medical_Records
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Quarantine;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Treatment;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Vaccination;
-import com.group9.kurbani_cattle_hut_management_system.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
