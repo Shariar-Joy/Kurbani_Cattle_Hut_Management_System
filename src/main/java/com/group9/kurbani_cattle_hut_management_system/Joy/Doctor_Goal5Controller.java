@@ -4,7 +4,6 @@ import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Certificate;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.SearchUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
@@ -13,8 +12,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Doctor_Goal5Controller
@@ -120,9 +123,17 @@ public class Doctor_Goal5Controller
 
     @javafx.fxml.FXML
     public void loadAnimalOnActionButton(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/animals.bin");
-        animalTableView1.getItems().clear();
-        animalTableView1.getItems().add((Animal) list);
+        File file = new File("data/animals.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Animal> list = (ArrayList<Animal>) ois.readObject();
+            ois.close();
+            animalTableView1.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
@@ -138,8 +149,16 @@ public class Doctor_Goal5Controller
 
     @javafx.fxml.FXML
     public void loadAnimalOnActionButton1(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/certificates.bin");
-        certificateTableView.getItems().clear();
-        certificateTableView.getItems().add((Certificate) list);
+        File file = new File("data/certificates.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Certificate> list = (ArrayList<Certificate>) ois.readObject();
+            ois.close();
+            certificateTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 }

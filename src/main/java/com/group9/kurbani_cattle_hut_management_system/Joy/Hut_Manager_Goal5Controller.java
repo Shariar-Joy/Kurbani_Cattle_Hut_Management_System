@@ -7,7 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -147,7 +150,16 @@ public class Hut_Manager_Goal5Controller
         if (!found) {
             AlertUtil.showError("Not Found", "No booking found with ID: " + bookingID);
         }
-        FilesUtil.saveObject("data/bookings.bin", bookingList);
+        File file = new File("data/booking.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(bookingList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: ");
+        }
     }
 
 
@@ -180,7 +192,16 @@ public class Hut_Manager_Goal5Controller
         bookingList.add(newBooking);
         bookingTableView.getItems().add(newBooking);
         AlertUtil.showInfo("Success","Booking saved successfully.");
-        FilesUtil.saveObject("data/bookings.bin", bookingList);
+        File file = new File("data/booking.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(bookingList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: ");
+        }
     }
 
     @javafx.fxml.FXML
@@ -204,7 +225,16 @@ public class Hut_Manager_Goal5Controller
         if (!found) {
             AlertUtil.showError("Not Found", "No booking found with ID: " + assignBookingID);
         }
-        FilesUtil.saveObject("data/bookings.bin", bookingList);
+        File file = new File("data/booking.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(bookingList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: ");
+        }
 
     }
 

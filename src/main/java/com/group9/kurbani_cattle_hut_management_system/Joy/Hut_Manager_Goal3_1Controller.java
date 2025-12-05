@@ -3,13 +3,15 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -78,7 +80,16 @@ public class Hut_Manager_Goal3_1Controller
         animalEditList.add(newAnimal);
         AlertUtil.showInfo("Success", "Animal information saved successfully.");
 
-        FilesUtil.saveObject("data/animal-edit.bin", animalEditList);
+        File file = new File("data/animal-edit.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(animalEditList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
 
     }
 

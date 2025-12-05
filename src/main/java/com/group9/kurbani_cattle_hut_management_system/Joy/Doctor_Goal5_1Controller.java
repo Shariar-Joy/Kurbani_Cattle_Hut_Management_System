@@ -3,7 +3,6 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Certificate;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.IDGenerator;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.RefreshUtil;
 import javafx.event.ActionEvent;
@@ -12,7 +11,10 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -117,7 +119,16 @@ public class Doctor_Goal5_1Controller
 
         AlertUtil.showInfo("Success", "Certificate saved successfully.");
 
-        FilesUtil.saveObject("data/certificates.bin", certificateList);
+        File file = new File("data/certificates.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(certificateList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

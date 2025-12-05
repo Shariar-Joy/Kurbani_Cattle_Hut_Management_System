@@ -7,7 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -113,7 +116,16 @@ public class Hut_Manager_Goal2Controller
         AlertUtil.showInfo("Success", "Tent added successfully.");
         tentTableView.getItems().clear();
         tentTableView.getItems().addAll(tentList);
-        FilesUtil.saveObject("data/tents.bin", tentList);
+        File file = new File("data/tent.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(tentList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

@@ -3,13 +3,18 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Owner;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.SearchUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Hut_Manager_Goal3Controller
@@ -49,6 +54,18 @@ public class Hut_Manager_Goal3Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+        animalIdCOL.setCellValueFactory(new PropertyValueFactory<>("animalID"));
+        animalTypeCOL.setCellValueFactory(new PropertyValueFactory<>("animalType"));
+        weightCOL.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        ageCOL.setCellValueFactory(new PropertyValueFactory<>("age"));
+        entryDateCOl.setCellValueFactory(new PropertyValueFactory<>("entryDate"));
+
+        ownerIdCOL.setCellValueFactory(new PropertyValueFactory<>("ownerID"));
+        ownerNameCOL.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
+        ownerNidCOL.setCellValueFactory(new PropertyValueFactory<>("ownerNID"));
+        ownerAddressCOL.setCellValueFactory(new PropertyValueFactory<>("ownerAddress"));
+        ownerPhoneCOL.setCellValueFactory(new PropertyValueFactory<>("ownerPhone"));
+
     }
 
     @javafx.fxml.FXML
@@ -74,10 +91,29 @@ public class Hut_Manager_Goal3Controller
 
     @javafx.fxml.FXML
     public void loadOnActionButton(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("animals_edit.bin");
-        animalTableView.getItems().add((Animal) list);
-        List<Object> list1 = FilesUtil.readObjects("owners_edit.bin");
-        ownerTableView.getItems().add((Owner) list1);
+        File file = new File("data/animal-edit.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Animal> list = (ArrayList<Animal>) ois.readObject();
+            ois.close();
+            animalTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
+
+        File file1 = new File("data/owners_edit.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file1);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Owner> list1 = (ArrayList<Owner>) ois.readObject();
+            ois.close();
+            ownerTableView.getItems().setAll(list1);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

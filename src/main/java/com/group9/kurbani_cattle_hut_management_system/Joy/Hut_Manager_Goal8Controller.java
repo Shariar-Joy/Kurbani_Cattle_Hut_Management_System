@@ -2,16 +2,23 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Owner;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Tent;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Booking;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Hut_Manager_Goal8Controller extends Hut_Manager_Goal1Controller {
@@ -88,6 +95,36 @@ public class Hut_Manager_Goal8Controller extends Hut_Manager_Goal1Controller {
 
     @javafx.fxml.FXML
     public void initialize() {
+        animalIdCOL.setCellValueFactory(new PropertyValueFactory<>("animalID"));
+        animalTypeCOL.setCellValueFactory(new PropertyValueFactory<>("animalType"));
+        weightCOL.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        breedCOL.setCellValueFactory(new PropertyValueFactory<>("breed"));
+        askingPriceCOL.setCellValueFactory(new PropertyValueFactory<>("askingPrice"));
+        ageCOL.setCellValueFactory(new PropertyValueFactory<>("age"));
+        entryDateCOl.setCellValueFactory(new PropertyValueFactory<>("entryDate"));
+        tentCOL.setCellValueFactory(new PropertyValueFactory<>("tent"));
+        statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+        ownerIdCOL.setCellValueFactory(new PropertyValueFactory<>("ownerID"));
+        ownerNameCOL.setCellValueFactory(new PropertyValueFactory<>("ownerName"));
+        ownerNidCOL.setCellValueFactory(new PropertyValueFactory<>("ownerNID"));
+        ownerAddressCOL.setCellValueFactory(new PropertyValueFactory<>("ownerAddress"));
+        ownerPhoneCOL.setCellValueFactory(new PropertyValueFactory<>("ownerPhone"));
+
+        tentIdCOL.setCellValueFactory(new PropertyValueFactory<>("tentID"));
+        occupiedSlotsCOL.setCellValueFactory(new PropertyValueFactory<>("occupiedSloats"));
+        totalCapacityCOL.setCellValueFactory(new PropertyValueFactory<>("totalCapacity"));
+        freeSlotsCOL.setCellValueFactory(new PropertyValueFactory<>("freeSlots"));
+        directionCOL.setCellValueFactory(new PropertyValueFactory<>("direction"));
+        statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+
+        bookingIDCOL.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
+        paymentAmountCOL.setCellValueFactory(new PropertyValueFactory<>("paymentAmount"));
+        paymentStatusCOL.setCellValueFactory(new PropertyValueFactory<>("paymentStatus"));
+        ownerNameCOL1.setCellValueFactory(new PropertyValueFactory<>("bookingOwnerName"));
+        BookingDateCOL.setCellValueFactory(new PropertyValueFactory<>("bookingDate"));
+
     }
 
     @javafx.fxml.FXML
@@ -117,28 +154,68 @@ public class Hut_Manager_Goal8Controller extends Hut_Manager_Goal1Controller {
     public void tentReportOnActionButton(ActionEvent actionEvent) {
     }
 
-    @javafx.fxml.FXML
+    @FXML
     public void ownerLoadOA(ActionEvent actionEvent) {
-        List<Object> list2 = FilesUtil.readObjects("data/owners.bin");
-        ownerTableView.getItems().add((Animal) list2 );
+//        File file = new File("data/owner.bin");
+//        try {
+//            FileInputStream fis = new FileInputStream(file);
+//            ObjectInputStream ois = new ObjectInputStream(fis);
+//
+//            ArrayList<Owner> list = (ArrayList<Owner>) ois.readObject();
+//            ois.close();
+//            ownerTableView.getItems().setAll(list);// THIS IS IMPORTANT
+//            AlertUtil.showInfo("Success", "Loaded from file");
+//        } catch (IOException | ClassNotFoundException e) {
+//            AlertUtil.showError("Error", "Load error: ");
+//        }
     }
 
     @javafx.fxml.FXML
     public void animalLoadOA(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/animals.bin");
-        animalTableView.getItems().add((Animal) list );
+        File file = new File("data/animals.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            ArrayList<Animal> list1 = (ArrayList<Animal>) ois.readObject();
+            ois.close();
+            animalTableView.getItems().setAll(list1);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: ");
+        }
     }
 
     @javafx.fxml.FXML
     public void bookingLoadOA(ActionEvent actionEvent) {
-        List<Object> list3 = FilesUtil.readObjects("data/bookings.bin");
-        bookingTableView.getItems().add((Booking) list3 );
+        File file = new File("data/booking.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            ArrayList<Booking> list1 = (ArrayList<Booking>) ois.readObject();
+            ois.close();
+            bookingTableView.getItems().setAll(list1);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
     public void tentLoadOA(ActionEvent actionEvent) {
-        List<Object> list4 = FilesUtil.readObjects("data/tents.bin");
-        tentTableView.getItems().add((Tent) list4 );
+        File file = new File("data/tent.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            ArrayList<Tent> list1 = (ArrayList<Tent>) ois.readObject();
+            ois.close();
+            tentTableView.getItems().setAll(list1);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

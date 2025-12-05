@@ -13,7 +13,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Doctor_Goal3Controller
@@ -85,8 +88,18 @@ public class Doctor_Goal3Controller
         quarantineList.add(quarantine);
         quarantineTableView.getItems().addAll(quarantineList);
         AlertUtil.showInfo("Success", "Quarantine record created successfully.");
-        FilesUtil.saveObject("data/quarantines.bin", quarantineList);
 
+        File file = new File("data/quarantines.bin");
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(quarantineList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
 
     }
 

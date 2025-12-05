@@ -7,7 +7,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -107,7 +110,16 @@ public class Doctor_Goal2Controller
         AlertUtil.showInfo("Success","Vaccination record saved successfully.");
         vaccinationTableView.getItems().clear();
         vaccinationTableView.getItems().addAll(vaccinationList);
-        FilesUtil.saveObject("data/vaccinations.bin", vaccinationList);
+        File file = new File("data/vaccinations.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(vaccinationList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
 
     }
 

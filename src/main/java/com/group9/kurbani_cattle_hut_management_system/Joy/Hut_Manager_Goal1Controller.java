@@ -10,7 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -169,8 +169,32 @@ public class Hut_Manager_Goal1Controller {
         animalTableView.getItems().addAll(animalList);
         ownerTableView.getItems().addAll(ownerList);
 
-        FilesUtil.saveObject("data/animals.bin", animalList);
-        FilesUtil.saveObject("data/owners.bin", ownerList);
+        File file = new File("data/animals.bin");
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(animalList);  // Save entire list
+            oos.close();
+
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
+        File file1 = new File("data/owner.bin");
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file1); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(ownerList);  // Save entire list
+            oos.close();
+
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
 
     }
 
@@ -210,7 +234,19 @@ public class Hut_Manager_Goal1Controller {
         if(!found) {
             AlertUtil.showError("Not Found", "Animal ID: " + animalIdToUpdate + " not found.");
         }
-        FilesUtil.saveObject("data/animals.bin", animalList);
+        File file = new File("data/animals.bin");
+
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+            oos.writeObject(newStatus);  // Save entire list
+            oos.close();
+
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
@@ -262,14 +298,35 @@ public class Hut_Manager_Goal1Controller {
 
     @FXML
     public void loadAnimalOnActionButton(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/animals.bin");
-        animalTableView.getItems().addAll((Animal) list);
-        List<Object> list1 = FilesUtil.readObjects("data/owners.bin");
-        ownerTableView.getItems().addAll((Owner) list1);
+        File file = new File("data/animals.bin");
+
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            ArrayList<Animal> list = (ArrayList<Animal>) ois.readObject();
+            ois.close();
+            animalTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @FXML
     public void loadOwnerOnActionButton(ActionEvent actionEvent) {
-        /*        FileUtil.readText("owners.txt", ownerTableView);*/
+        File file = new File("data/owner.bin");
+
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+
+            ArrayList<Owner> list = (ArrayList<Owner>) ois.readObject();
+            ois.close();
+            ownerTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 }

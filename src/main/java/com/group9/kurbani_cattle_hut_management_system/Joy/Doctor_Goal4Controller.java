@@ -8,7 +8,10 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -130,8 +133,18 @@ public class Doctor_Goal4Controller
         treatmentTableView.getItems().add(newUpdate);
         AlertUtil.showInfo("Success", "Treatment update record saved successfully.");
 
-        FilesUtil.saveObject("data/treatments.bin", treatmentList);
+        File file = new File("data/treatments.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(treatmentList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
+
 
     @javafx.fxml.FXML
     public void saveOnActionButton(ActionEvent actionEvent) {
@@ -148,7 +161,16 @@ public class Doctor_Goal4Controller
         treatmentList.add(newTreatment);
         treatmentTableView.getItems().add(newTreatment);
         AlertUtil.showInfo("Success", "Treatment record saved successfully.");
-        FilesUtil.saveObject("data/treatments.bin", treatmentList);
+        File file = new File("data/treatments.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(treatmentList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
@@ -162,7 +184,16 @@ public class Doctor_Goal4Controller
         treatmentList.add(newFollowUp);
         treatmentTableView.getItems().add(newFollowUp);
         AlertUtil.showInfo("Success", "Follow-up record saved successfully.");
-        FilesUtil.saveObject("data/treatments.bin", treatmentList);
+        File file = new File("data/treatments.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(treatmentList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

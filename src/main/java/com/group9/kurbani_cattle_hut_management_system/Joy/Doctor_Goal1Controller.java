@@ -2,13 +2,18 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.SearchUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Doctor_Goal1Controller
@@ -35,6 +40,14 @@ public class Doctor_Goal1Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+        animalIdCOL1.setCellValueFactory(new PropertyValueFactory<>("animalID"));
+        animalTypeCOL1.setCellValueFactory(new PropertyValueFactory<>("animalType"));
+        weightCOL.setCellValueFactory(new PropertyValueFactory<>("weight"));
+        ageCOL.setCellValueFactory(new PropertyValueFactory<>("age"));
+        entryDateCOl1.setCellValueFactory(new PropertyValueFactory<>("entryDate"));
+        tentCOL1.setCellValueFactory(new PropertyValueFactory<>("tent"));
+        statusCOL1.setCellValueFactory(new PropertyValueFactory<>("status"));
+
     }
 
     @javafx.fxml.FXML
@@ -54,9 +67,18 @@ public class Doctor_Goal1Controller
 
     @javafx.fxml.FXML
     public void loadAnimalOnActionButton(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/animals.bin");
-        animalTableView1.getItems().clear();
-        animalTableView1.getItems().add((Animal) list);
+
+        File file = new File("data/animals.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Animal> list = (ArrayList<Animal>) ois.readObject();
+            ois.close();
+            animalTableView1.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error");
+        }
 
     }
 

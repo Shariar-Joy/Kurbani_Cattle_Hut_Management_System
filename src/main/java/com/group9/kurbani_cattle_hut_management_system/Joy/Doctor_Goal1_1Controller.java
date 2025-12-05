@@ -2,13 +2,16 @@ package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Medical_Records;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.IDStoreUtil;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.RefreshUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class Doctor_Goal1_1Controller
@@ -35,7 +38,7 @@ public class Doctor_Goal1_1Controller
     @javafx.fxml.FXML
     public void initialize() {
 
-        animalIDCB.setItems(IDStoreUtil.loadIDs("animals_ids.txt"));
+        animalIDCB.setItems(IDStoreUtil.loadIDs("data/animals_ids.txt"));
     }
 
     @javafx.fxml.FXML
@@ -55,10 +58,18 @@ public class Doctor_Goal1_1Controller
         String initialDiagnosis = initialTF.getText();
 
         Medical_Records record = new Medical_Records(animalID, temperature, pulseRate, breathingRate, weight, behavior, symptoms, initialDiagnosis);
-
         medicalRecordsList.add(record);
 
-        FilesUtil.saveObject("data/medical_records.bin", medicalRecordsList);
+        File file = new File("data/medical_Records.bin");
+        try {
+            FileOutputStream fos = new FileOutputStream(file); // NO appending
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(medicalRecordsList);  // Save entire list
+            oos.close();
+            AlertUtil.showInfo("Success", "Saved to file");
+        } catch (IOException e) {
+            AlertUtil.showError("Error", "File error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML

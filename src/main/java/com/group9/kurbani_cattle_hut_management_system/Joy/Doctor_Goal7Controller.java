@@ -5,14 +5,19 @@ import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Medical_Records
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Quarantine;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Treatment;
 import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Vaccination;
-import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Doctor_Goal7Controller
@@ -95,6 +100,37 @@ public class Doctor_Goal7Controller
 
     @javafx.fxml.FXML
     public void initialize() {
+        medicalRecordAnimalIDCOL.setCellValueFactory(new PropertyValueFactory<>("animalID"));
+        tempCOl.setCellValueFactory(new PropertyValueFactory<>("temperature"));
+        pulseCOl.setCellValueFactory(new PropertyValueFactory<>("pulseRate"));
+        breathingCOL.setCellValueFactory(new PropertyValueFactory<>("breathingRate"));
+        weightCOL.setCellValueFactory(new PropertyValueFactory<>("weight"));
+
+        animalIDCOL.setCellValueFactory(new PropertyValueFactory<>("animalId"));
+        vaccineNameCOL.setCellValueFactory(new PropertyValueFactory<>("vaccineName"));
+        doseNumberCOl.setCellValueFactory(new PropertyValueFactory<>("doseNumber"));
+        dateAdministeredCOL.setCellValueFactory(new PropertyValueFactory<>("vaccinationDate"));
+        nextDueDateCOL.setCellValueFactory(new PropertyValueFactory<>("nextDueDate"));
+        statusCOL.setCellValueFactory(new PropertyValueFactory<>("status"));
+
+
+        symptomsCOL.setCellValueFactory(new PropertyValueFactory<>("symptoms"));
+        diseaseCOL.setCellValueFactory(new PropertyValueFactory<>("disease"));
+        isolationTimeCOL.setCellValueFactory(new PropertyValueFactory<>("isolationTime"));
+        isolationTentCOL.setCellValueFactory(new PropertyValueFactory<>("isolationTent"));
+        medicineCOL.setCellValueFactory(new PropertyValueFactory<>("medicine"));
+
+        animalIDCOL1.setCellValueFactory(new PropertyValueFactory<>("animalId"));
+        diagnosisCOL1.setCellValueFactory(new PropertyValueFactory<>("diagnosis"));
+        medicineCOL2.setCellValueFactory(new PropertyValueFactory<>("medication"));
+        dosageCOL1.setCellValueFactory(new PropertyValueFactory<>("dosage"));
+        timeCOL1.setCellValueFactory(new PropertyValueFactory<>("dosageTime"));
+        daysCOL1.setCellValueFactory(new PropertyValueFactory<>("dosageDays"));
+        startCOL1.setCellValueFactory(new PropertyValueFactory<>("durationStart"));
+        endCOL1.setCellValueFactory(new PropertyValueFactory<>("durationEnd"));
+        expectedRecoveryCOL1.setCellValueFactory(new PropertyValueFactory<>("expectedRecovery"));
+        nextVisitCOL1.setCellValueFactory(new PropertyValueFactory<>("newVisitDate"));
+        statusCOL2.setCellValueFactory(new PropertyValueFactory<>("updateStatus"));
     }
 
     @javafx.fxml.FXML
@@ -125,30 +161,62 @@ public class Doctor_Goal7Controller
 
     @javafx.fxml.FXML
     public void loadMedicalOA(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/medical_records.bin");
-        medicalRecordTableView.getItems().clear();
-        medicalRecordTableView.getItems().add((Medical_Records) list);
+        File file = new File("data/medical_Records.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Medical_Records> list = (ArrayList<Medical_Records>) ois.readObject();
+            ois.close();
+            medicalRecordTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
     public void loadTreatmentOA(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/treatments.bin");
-        treatmentTableView1.getItems().clear();
-        treatmentTableView1.getItems().add((Treatment) list);
+        File file = new File("data/treatments.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Treatment> list = (ArrayList<Treatment>) ois.readObject();
+            ois.close();
+            treatmentTableView1.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
     public void loadVaccinationOA(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/vaccinations.bin");
-        vaccinationTableView.getItems().clear();
-        vaccinationTableView.getItems().add((Vaccination) list);
+        File file = new File("data/vaccinations.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Vaccination> list = (ArrayList<Vaccination>) ois.readObject();
+            ois.close();
+            vaccinationTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
     public void loadQuarantineOA(ActionEvent actionEvent) {
-        List<Object> list = FilesUtil.readObjects("data/quarantines.bin");
-        quarantineTableView.getItems().clear();
-        quarantineTableView.getItems().add((Quarantine) list);
+        File file = new File("data/quarantines.bin");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            ArrayList<Quarantine> list = (ArrayList<Quarantine>) ois.readObject();
+            ois.close();
+            quarantineTableView.getItems().setAll(list);  // THIS IS IMPORTANT
+            AlertUtil.showInfo("Success", "Loaded from file");
+        } catch (IOException | ClassNotFoundException e) {
+            AlertUtil.showError("Error", "Load error: " + e.getMessage());
+        }
     }
 
     @javafx.fxml.FXML
