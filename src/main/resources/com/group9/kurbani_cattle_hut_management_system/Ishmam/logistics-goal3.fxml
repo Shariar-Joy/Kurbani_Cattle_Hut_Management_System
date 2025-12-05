@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="536.0" prefWidth="877.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Ishmam.Logistics_goal3Controller">
+   <children>
+      <Label layoutX="34.0" layoutY="31.0" prefHeight="28.0" prefWidth="346.0" text="Goal 3: TRANSPORT COORDINATION    ">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="695.0" layoutY="489.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="708.0" layoutY="16.0" prefHeight="34.0" prefWidth="122.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="738.0" layoutY="50.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="690.0" layoutX="126.0" layoutY="95.0" startX="-96.0" />
+      <Line endX="-100.0" endY="275.0" layoutX="453.0" layoutY="118.0" startX="-100.0" />
+      <Label layoutX="30.0" layoutY="112.0" text="NEW ENTRY" />
+      <Label layoutX="365.0" layoutY="112.0" text="TODAY'S ENTRIES" />
+      <TableView fx:id="todaysEntryTB" layoutX="413.0" layoutY="148.0" prefHeight="301.0" prefWidth="434.0">
+        <columns>
+          <TableColumn fx:id="timeCOL" prefWidth="75.0" text="Time" />
+          <TableColumn fx:id="animalIDCOL" prefWidth="75.0" text="Animal ID" />
+            <TableColumn fx:id="animalCOL" prefWidth="75.0" text="Animal" />
+            <TableColumn fx:id="sellerCOL" prefWidth="75.0" text="Seller" />
+            <TableColumn fx:id="entryTypeCOL" prefWidth="75.0" text="Entry Type" />
+            <TableColumn fx:id="healthCOL" prefWidth="75.0" text="Health" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="animalIDTf" layoutX="133.0" layoutY="148.0" />
+      <Label layoutX="46.0" layoutY="152.0" text="Animal ID: " />
+      <Label layoutX="58.0" layoutY="187.0" text="Animal" />
+      <ComboBox fx:id="tentCB" layoutX="132.0" layoutY="220.0" prefWidth="150.0" />
+      <Label layoutX="62.0" layoutY="224.0" text="Tent:" />
+      <Label layoutX="60.0" layoutY="269.0" text="Seller Name" />
+      <TextField fx:id="sellerNameTF" layoutX="133.0" layoutY="265.0" />
+      <RadioButton fx:id="newArrivalRB" layoutX="160.0" layoutY="341.0" mnemonicParsing="false" text="New Arrival">
+         <toggleGroup>
+            <ToggleGroup fx:id="EntryType" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="returnRB" layoutX="160.0" layoutY="369.0" mnemonicParsing="false" text="Return" toggleGroup="$EntryType" />
+      <Label layoutX="60.0" layoutY="341.0" text="Entry Type" />
+      <Button layoutX="211.0" layoutY="464.0" mnemonicParsing="false" onAction="#clearOA" text="Clear" />
+      <Button layoutX="77.0" layoutY="464.0" mnemonicParsing="false" onAction="#comfirmEntryCOL" text="Confirm Entry" />
+      <Label fx:id="totalEntryLabel" layoutX="399.0" layoutY="468.0" prefHeight="17.0" prefWidth="122.0" text="Total :" />
+      <ComboBox fx:id="animalCB" layoutX="132.0" layoutY="183.0" prefWidth="150.0" />
+      <Label layoutX="34.0" layoutY="394.0" prefHeight="17.0" prefWidth="82.0" text="Health Status:" />
+      <RadioButton fx:id="healthyCB" layoutX="50.0" layoutY="424.0" mnemonicParsing="false" text="Healthy ">
+         <toggleGroup>
+            <ToggleGroup fx:id="HealthStatus" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="injuredRB" layoutX="153.0" layoutY="424.0" mnemonicParsing="false" text="Injured" toggleGroup="$HealthStatus" />
+      <RadioButton fx:id="sickRB" layoutX="241.0" layoutY="424.0" mnemonicParsing="false" text="Sick" toggleGroup="$HealthStatus" />
+      <Label fx:id="errorLabel" layoutX="48.0" layoutY="299.0" text="Label" />
+   </children>
+</AnchorPane>

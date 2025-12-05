@@ -1,5 +1,6 @@
-package com.group9.kurbani_cattle_hut_management_system;
+package com.group9.kurbani_cattle_hut_management_system.Ishmam;
 
+import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
@@ -26,12 +27,7 @@ public class LoginController
                 passwordTF.getText() == null || passwordTF.getText().trim().isEmpty()){
             showAlert("Error", "The Information is Missing");
             return;
-        }
-        if (email.equals("a") && password.equals("1234")) {
-            BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager-view.fxml");
 
-        } else if (email.equals("d") && password.equals("1234")) {
-            BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/doctor-view.fxml");
 
         } if (email.equals("c") && password.equals("1234")) {
             com.group9.kurbani_cattle_hut_management_system.BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Ishmam/customer-view.fxml");

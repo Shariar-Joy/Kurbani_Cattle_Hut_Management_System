@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="732.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Ishmam.Customer_goal1Controller">
+   <children>
+      <Label layoutX="24.0" layoutY="21.0" prefHeight="28.0" prefWidth="346.0" text="Goal 1:Buy animals by breed">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </Label>
+      <Button layoutX="823.0" layoutY="706.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="809.0" layoutY="20.0" prefHeight="34.0" prefWidth="122.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="839.0" layoutY="54.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="827.0" endY="-6.0" layoutX="116.0" layoutY="85.0" startX="-96.0" />
+      <TextField fx:id="searchAnimalTF" layoutX="428.0" layoutY="99.0" />
+      <Label layoutX="309.0" layoutY="103.0" text="Search For Animals" />
+      <Button layoutX="733.0" layoutY="158.0" mnemonicParsing="false" onAction="#filterItemsOA" prefHeight="34.0" prefWidth="81.0" text="Filter Items" />
+      <TableView fx:id="showProduct" layoutX="24.0" layoutY="242.0" prefHeight="188.0" prefWidth="826.0">
+        <columns>
+            <TableColumn fx:id="animalIDCOL" prefWidth="75.0" text="Animal ID" />
+            <TableColumn fx:id="animalCOL" prefWidth="75.0" text="Animal" />
+          <TableColumn fx:id="breedCOL" prefWidth="75.0" text="Breed" />
+            <TableColumn fx:id="priceCOL" prefWidth="75.0" text="Price" />
+            <TableColumn fx:id="tentCOL" prefWidth="75.0" text="Tent" />
+            <TableColumn fx:id="availableCOL" prefWidth="75.0" text="Available" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <ComboBox fx:id="animalCB" layoutX="37.0" layoutY="158.0" prefWidth="150.0" promptText="Animal" />
+      <TextField fx:id="priceTF" layoutX="212.0" layoutY="158.0" prefHeight="25.0" prefWidth="122.0" promptText="Price" />
+      <Button layoutX="603.0" layoutY="99.0" mnemonicParsing="false" onAction="#searchOA" text="search" />
+      <Label layoutX="37.0" layoutY="124.0" text="Filter">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="733.0" layoutY="199.0" mnemonicParsing="false" onAction="#reloadOA" prefHeight="25.0" prefWidth="81.0" text="Reload" />
+      <RadioButton fx:id="paymentCardRB" layoutX="202.0" layoutY="495.0" mnemonicParsing="false" prefWidth="122.0" text=" Credit/Debit Card">
+         <toggleGroup>
+            <ToggleGroup fx:id="PaymentMethod" />
+         </toggleGroup></RadioButton>
+      <Label layoutX="91.0" layoutY="486.0" text="Payment method" />
+      <RadioButton fx:id="paymentBankRB" layoutX="202.0" layoutY="521.0" mnemonicParsing="false" text="Bank Transfer" toggleGroup="$PaymentMethod" />
+      <RadioButton fx:id="paymentCashRB" layoutX="202.0" layoutY="548.0" mnemonicParsing="false" text="Cash on Delivery" toggleGroup="$PaymentMethod" />
+      <RadioButton fx:id="paymentOfflineRB" layoutX="202.0" layoutY="576.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="110.0" text="Offline Payment" toggleGroup="$PaymentMethod" />
+      <Label fx:id="errorLabel" layoutX="558.0" layoutY="440.0" prefHeight="17.0" prefWidth="247.0" text=" " />
+      <RadioButton fx:id="deliveryHomeRB" layoutX="202.0" layoutY="611.0" mnemonicParsing="false" text=" Home Delivery (+$50)">
+         <toggleGroup>
+            <ToggleGroup fx:id="DeliveryMethod" />
+         </toggleGroup></RadioButton>
+      <Label layoutX="91.0" layoutY="602.0" text="Delivery Method" />
+      <RadioButton fx:id="deliveryPIckupRB" layoutX="202.0" layoutY="637.0" mnemonicParsing="false" text="Pick Up" toggleGroup="$DeliveryMethod" />
+      <TableView fx:id="cartTV" layoutX="595.0" layoutY="485.0" prefHeight="169.0" prefWidth="296.0">
+        <columns>
+          <TableColumn fx:id="cartAnimalIDCOL" prefWidth="75.0" text="Animal ID" />
+          <TableColumn fx:id="cartAnimalCOL" prefWidth="75.0" text="Animal" />
+            <TableColumn fx:id="cartQuantityCOL" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="cartTotalPriceCOL" prefWidth="75.0" text="TotalPrice" />
+        </columns>
+      </TableView>
+      <Line endX="728.0" layoutX="162.0" layoutY="440.0" startX="-96.0" />
+      <Label layoutX="499.0" layoutY="491.0" text="Cart Summary" />
+      <Button layoutX="870.0" layoutY="311.0" mnemonicParsing="false" onAction="#addToCartOA" prefHeight="25.0" prefWidth="81.0" text="Add to cart" />
+      <Button layoutX="595.0" layoutY="666.0" mnemonicParsing="false" onAction="#proceedCheckOA" prefHeight="25.0" prefWidth="122.0" text="Proceed Checkout" />
+      <Button layoutX="774.0" layoutY="666.0" mnemonicParsing="false" onAction="#resetcartOA" prefHeight="25.0" prefWidth="81.0" text="Reset" />
+      <TextField fx:id="breedTF" layoutX="367.0" layoutY="158.0" prefHeight="25.0" prefWidth="122.0" promptText="Price" />
+   </children>
+</AnchorPane>

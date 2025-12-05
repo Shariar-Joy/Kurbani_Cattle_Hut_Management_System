@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="811.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.SignUpController">
+   <children>
+      <Label alignment="CENTER" layoutX="157.0" layoutY="35.0" prefHeight="50.0" prefWidth="306.0" text="Kurbani Cattle Hut" textFill="#262628">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="157.0" layoutY="60.0" prefHeight="50.0" prefWidth="306.0" text="Management System" textFill="#262628">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="roleCB" layoutX="204.0" layoutY="140.0" prefHeight="39.0" prefWidth="213.0" promptText="--Choose Role--" />
+      <TextField fx:id="fullNameTF" layoutX="204.0" layoutY="216.0" prefHeight="39.0" prefWidth="213.0" />
+      <TextField fx:id="emailTF" layoutX="204.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" />
+      <TextField fx:id="phoneTF" layoutX="204.0" layoutY="367.0" prefHeight="39.0" prefWidth="213.0" />
+      <TextField fx:id="hutAddressTF" layoutX="204.0" layoutY="452.0" prefHeight="39.0" prefWidth="213.0" />
+      <TextField fx:id="passwordTF" layoutX="204.0" layoutY="534.0" prefHeight="39.0" prefWidth="213.0" />
+      <TextField fx:id="confirmPasswordTF" layoutX="204.0" layoutY="618.0" prefHeight="39.0" prefWidth="213.0" />
+      <Label layoutX="204.0" layoutY="196.0" prefHeight="20.0" prefWidth="83.0" text="Full Name *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="269.0" prefHeight="20.0" prefWidth="108.0" text="Email Address *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="347.0" prefHeight="20.0" prefWidth="108.0" text="Phone Number *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="432.0" prefHeight="20.0" prefWidth="108.0" text="Hut Address *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="514.0" prefHeight="20.0" prefWidth="108.0" text="Password *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="204.0" layoutY="598.0" prefHeight="20.0" prefWidth="134.0" text="Confirm Password *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="204.0" layoutY="692.0" mnemonicParsing="false" onAction="#signUpOnActionButton" prefHeight="39.0" prefWidth="213.0" text="Sign Up">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="204.0" layoutY="758.0" prefHeight="27.0" prefWidth="153.0" text="Already have an account?">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="365.0" layoutY="759.0" mnemonicParsing="false" onAction="#loginOnActionButton" text="Login" />
+      <Label layoutX="204.0" layoutY="120.0" prefHeight="20.0" prefWidth="128.0" text="Select Your Role *">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="474.0" prefWidth="679.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Ishmam.Logistics_goal2Controller">
+   <children>
+      <Label layoutX="34.0" layoutY="31.0" prefHeight="28.0" prefWidth="346.0" text="Goal 2 :EXIT AUTHORIZATION">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="531.0" layoutY="441.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+      <Label alignment="CENTER" layoutX="557.0" layoutY="16.0" prefHeight="34.0" prefWidth="122.0" text="Customer">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Button layoutX="587.0" layoutY="50.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+      <Line endX="552.0" layoutX="126.0" layoutY="95.0" startX="-96.0" />
+      <Label layoutX="46.0" layoutY="143.0" text="Animal" />
+      <Label layoutX="36.0" layoutY="106.0" text="EXIT DETAILS: ">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button layoutX="287.0" layoutY="225.0" mnemonicParsing="false" onAction="#authorizeOA" text="AUTHORIZE EXIT" />
+      <ComboBox fx:id="reasonCB" layoutX="446.0" layoutY="168.0" prefWidth="150.0" />
+      <Label layoutX="368.0" layoutY="138.0" text="Buyer's Name:" />
+      <Label layoutX="46.0" layoutY="179.0" text="Animal ID:" />
+      <Label layoutX="380.0" layoutY="171.0" text="Reason:" />
+      <TextField fx:id="animalIDTF" layoutX="109.0" layoutY="175.0" />
+      <TextField fx:id="buyerNameTF" layoutX="446.0" layoutY="134.0" />
+      <TableView fx:id="exitInfoTV" layoutX="36.0" layoutY="273.0" prefHeight="164.0" prefWidth="588.0">
+        <columns>
+          <TableColumn fx:id="timeCOL" prefWidth="75.0" text="Time" />
+          <TableColumn fx:id="animalIDCOL" prefWidth="150.0" text="Animal ID" />
+            <TableColumn fx:id="animalCOL" prefWidth="122.0" text="Animal" />
+            <TableColumn fx:id="buyerCOL" prefWidth="122.0" text="Buyer:" />
+            <TableColumn fx:id="reasonOfexitCOL" prefWidth="122.0" text="Reason of Exit" />
+        </columns>
+      </TableView>
+      <Label fx:id="errorLabel" layoutX="464.0" layoutY="229.0" prefHeight="17.0" prefWidth="179.0" text=" " />
+      <ComboBox fx:id="animalCB" layoutX="109.0" layoutY="139.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
