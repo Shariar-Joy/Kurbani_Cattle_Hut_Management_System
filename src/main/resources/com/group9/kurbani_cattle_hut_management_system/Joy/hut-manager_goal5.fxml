@@ -14,79 +14,78 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="714.0" prefWidth="706.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal5Controller">
-   <children>
-      <Label layoutX="15.0" layoutY="14.0" prefHeight="28.0" prefWidth="369.0" text="Goal 5: Approve/reject online bookings &amp; promotions">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="558.0" layoutY="675.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="572.0" layoutY="-3.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="601.0" layoutY="30.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="583.0" layoutX="113.0" layoutY="62.0" startX="-96.0" />
-      <Label layoutX="129.0" layoutY="89.0" prefHeight="19.0" prefWidth="63.0" text="Bookings">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <TextField fx:id="bookingIDTF" layoutX="25.0" layoutY="119.0" prefHeight="28.0" prefWidth="135.0" promptText="Booking ID" />
-      <TextField fx:id="paymentAmountTF" layoutX="25.0" layoutY="161.0" prefHeight="28.0" prefWidth="135.0" promptText="Payment Amount" />
-      <TextField fx:id="ownerNameTF" layoutX="182.0" layoutY="119.0" prefHeight="28.0" prefWidth="135.0" promptText="Owner Name" />
-      <DatePicker fx:id="bookingDateDatePIcker" layoutX="182.0" layoutY="160.0" prefHeight="28.0" prefWidth="135.0" promptText="Booking Date" />
-      <Button layoutX="148.0" layoutY="205.0" mnemonicParsing="false" onAction="#saveOnActionButton" text="Save" />
-      <TableView fx:id="bookingTableView" layoutX="14.0" layoutY="301.0" prefHeight="167.0" prefWidth="680.0">
-         <columns>
-            <TableColumn fx:id="bookingIDCOL" prefWidth="98.0" text="Booking ID" />
-            <TableColumn fx:id="ownerNameCOL" prefWidth="115.0" text="Owner Name" />
-            <TableColumn fx:id="tentCOL" prefWidth="92.0" text=" Tent" />
-            <TableColumn fx:id="BookingDateCOL" prefWidth="115.0" text="Booking Date" />
-            <TableColumn fx:id="paymentAmountCOL" prefWidth="140.0" text="Payment Amount" />
-            <TableColumn fx:id="paymentStatusCOL" prefWidth="118.0" text="Payment Status" />
-         </columns>
-      </TableView>
-      <Label layoutX="114.0" layoutY="475.0" prefHeight="20.0" prefWidth="122.0" text="Verify Payment">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="verifyPaymentBookingIDCB" layoutX="97.0" layoutY="505.0" prefHeight="28.0" prefWidth="142.0" promptText="Select Booking ID" />
-      <RadioButton fx:id="paidRadioButton" layoutX="105.0" layoutY="552.0" mnemonicParsing="false" text="Paid">
-         <toggleGroup>
-            <ToggleGroup fx:id="Payment" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="unpaidRadioButton" layoutX="175.0" layoutY="553.0" mnemonicParsing="false" text="Unpaid" toggleGroup="$Payment" />
-      <Label layoutX="34.0" layoutY="552.0" text="Payment:">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="601.0" layoutY="74.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refreash" />
-      <TextField fx:id="searchTF" layoutX="426.0" layoutY="273.0" prefHeight="28.0" prefWidth="189.0" promptText="Search by Booking ID" />
-      <Button layoutX="618.0" layoutY="273.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
-      <Button layoutX="123.0" layoutY="591.0" mnemonicParsing="false" onAction="#savePaymentOnActionButton" text="Save Payment" />
-      <Label layoutX="429.0" layoutY="89.0" prefHeight="20.0" prefWidth="122.0" text="Approve/Reject">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Line endX="-100.0" endY="160.0" layoutX="430.0" layoutY="95.0" startX="-100.0" />
-      <ComboBox fx:id="approveRejectBookingIDCB" layoutX="416.0" layoutY="119.0" prefHeight="28.0" prefWidth="142.0" promptText="Select Booking ID" />
-      <Button layoutX="416.0" layoutY="162.0" mnemonicParsing="false" onAction="#approveOnActionButton" text="Approve" />
-      <Button layoutX="506.0" layoutY="163.0" mnemonicParsing="false" onAction="#rejectOnActionButton" text="Reject" />
-      <TextField fx:id="reasonToRejectTF" layoutX="395.0" layoutY="205.0" prefHeight="34.0" prefWidth="189.0" promptText="If reject, reason to reject" />
-      <Line endX="-100.0" endY="160.0" layoutX="429.0" layoutY="481.0" startX="-100.0" />
-      <Label layoutX="447.0" layoutY="475.0" prefHeight="20.0" prefWidth="122.0" text="Assign Tent">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="tentIDCB" layoutX="513.0" layoutY="505.0" prefHeight="28.0" prefWidth="142.0" promptText="Select Tent ID" />
-      <ComboBox fx:id="assignTentBookingIDCB" layoutX="348.0" layoutY="505.0" prefHeight="28.0" prefWidth="142.0" promptText="Select Booking ID" />
-      <Button layoutX="451.0" layoutY="591.0" mnemonicParsing="false" onAction="#assignTentOnActionButton" text="Assign Tent" />
-   </children>
+    <children>
+        <Label layoutX="15.0" layoutY="14.0" prefHeight="28.0" prefWidth="369.0" text="Goal 5: Approve/reject online bookings &amp; promotions">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="558.0" layoutY="675.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="572.0" layoutY="-3.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="601.0" layoutY="30.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="583.0" layoutX="113.0" layoutY="62.0" startX="-96.0" />
+        <Label layoutX="129.0" layoutY="89.0" prefHeight="19.0" prefWidth="63.0" text="Bookings">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <TextField fx:id="bookingIDTF" layoutX="25.0" layoutY="119.0" prefHeight="28.0" prefWidth="135.0" promptText="Booking ID" />
+        <TextField fx:id="paymentAmountTF" layoutX="25.0" layoutY="161.0" prefHeight="28.0" prefWidth="135.0" promptText="Payment Amount" />
+        <TextField fx:id="ownerNameTF" layoutX="182.0" layoutY="119.0" prefHeight="28.0" prefWidth="135.0" promptText="Owner Name" />
+        <DatePicker fx:id="bookingDateDatePIcker" layoutX="182.0" layoutY="160.0" prefHeight="28.0" prefWidth="135.0" promptText="Booking Date" />
+        <Button layoutX="148.0" layoutY="205.0" mnemonicParsing="false" onAction="#saveOnActionButton" text="Save" />
+        <TableView fx:id="bookingTableView" layoutX="14.0" layoutY="301.0" prefHeight="167.0" prefWidth="680.0">
+            <columns>
+                <TableColumn fx:id="bookingIDCOL" prefWidth="98.0" text="Booking ID" />
+                <TableColumn fx:id="ownerNameCOL" prefWidth="115.0" text="Owner Name" />
+                <TableColumn fx:id="tentCOL" prefWidth="92.0" text=" Tent" />
+                <TableColumn fx:id="BookingDateCOL" prefWidth="115.0" text="Booking Date" />
+                <TableColumn fx:id="paymentAmountCOL" prefWidth="140.0" text="Payment Amount" />
+                <TableColumn fx:id="paymentStatusCOL" prefWidth="118.0" text="Payment Status" />
+            </columns>
+        </TableView>
+        <Label layoutX="114.0" layoutY="475.0" prefHeight="20.0" prefWidth="122.0" text="Verify Payment">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="paidRadioButton" layoutX="105.0" layoutY="552.0" mnemonicParsing="false" text="Paid">
+            <toggleGroup>
+                <ToggleGroup fx:id="Payment" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="unpaidRadioButton" layoutX="175.0" layoutY="553.0" mnemonicParsing="false" text="Unpaid" toggleGroup="$Payment" />
+        <Label layoutX="34.0" layoutY="552.0" text="Payment:">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="601.0" layoutY="74.0" mnemonicParsing="false" onAction="#refreshOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refreash" />
+        <TextField fx:id="searchTF" layoutX="426.0" layoutY="273.0" prefHeight="28.0" prefWidth="189.0" promptText="Search by Booking ID" />
+        <Button layoutX="618.0" layoutY="273.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+        <Button layoutX="123.0" layoutY="591.0" mnemonicParsing="false" onAction="#savePaymentOnActionButton" text="Save Payment" />
+        <Label layoutX="482.0" layoutY="89.0" prefHeight="20.0" prefWidth="63.0" text="Reject">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Line endX="-100.0" endY="160.0" layoutX="430.0" layoutY="95.0" startX="-100.0" />
+        <Button layoutX="484.0" layoutY="163.0" mnemonicParsing="false" onAction="#rejectOnActionButton" text="Reject" />
+        <TextField fx:id="reasonToRejectTF" layoutX="419.0" layoutY="201.0" prefHeight="34.0" prefWidth="189.0" promptText="Reason to reject" />
+        <Line endX="-100.0" endY="160.0" layoutX="429.0" layoutY="481.0" startX="-100.0" />
+        <Label layoutX="447.0" layoutY="475.0" prefHeight="20.0" prefWidth="122.0" text="Assign Tent">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="tentIDCB" layoutX="513.0" layoutY="505.0" prefHeight="28.0" prefWidth="142.0" promptText="Select Tent ID" />
+        <Button layoutX="451.0" layoutY="591.0" mnemonicParsing="false" onAction="#assignTentOnActionButton" text="Assign Tent" />
+        <TextField fx:id="verifyPaymentBookingIDTF" layoutX="94.0" layoutY="507.0" promptText="Booking ID" />
+        <TextField fx:id="assignTentBookingIDTF" layoutX="345.0" layoutY="507.0" promptText="Booking ID" />
+        <TextField fx:id="approveRejectBookingIDTF" layoutX="434.0" layoutY="121.0" prefHeight="28.0" prefWidth="135.0" promptText="Booking ID" />
+    </children>
 </AnchorPane>

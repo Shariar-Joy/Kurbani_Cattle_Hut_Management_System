@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.tanvir.seller.ManageMedicalRecordController">
+    <children>
+        <Label layoutX="259.0" layoutY="14.0" text="Manage Medical Records">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Label layoutX="32.0" layoutY="90.0" text="Disease:">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="diseaseTextField" layoutX="124.0" layoutY="86.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Line endX="630.0" layoutX="133.0" layoutY="66.0" startX="-100.0" strokeWidth="2.0" />
+        <Button layoutX="633.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleRequestVetCheck" text="Request Vet Check" />
+        <Line endX="630.0" layoutX="133.0" layoutY="134.0" startX="-100.0" strokeWidth="2.0" />
+        <TableView fx:id="medicalRecordsTableView" layoutX="32.0" layoutY="152.0" prefHeight="373.0" prefWidth="732.0">
+            <columns>
+                <TableColumn fx:id="animalIDColumn" prefWidth="81.0" text="Animal ID" />
+                <TableColumn fx:id="diseaseTableColumn" prefWidth="174.0" text="Disease" />
+                <TableColumn fx:id="statusTableColumn" prefWidth="102.0" text="Status" />
+                <TableColumn fx:id="vetCheckRequestDateTableColumn" prefWidth="180.0" text="Requested for Vet Check" />
+                <TableColumn fx:id="lastUpdateDateTableColumn" prefWidth="194.0" text="Last Updated" />
+            </columns>
+        </TableView>
+        <Label layoutX="329.0" layoutY="90.0" text="Animal ID:">
+            <font>
+                <Font size="16.0" />
+            </font>
+        </Label>
+        <TextField fx:id="animalIDTextField" layoutX="421.0" layoutY="86.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+      <Button layoutX="32.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleGoBack" text="&lt;">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="635.0" layoutY="539.0" mnemonicParsing="false" onAction="#handleUpdateStatus" text="Update Status">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

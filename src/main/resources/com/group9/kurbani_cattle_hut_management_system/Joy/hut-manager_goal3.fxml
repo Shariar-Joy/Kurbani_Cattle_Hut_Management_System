@@ -10,60 +10,61 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="736.0" prefWidth="645.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal3Controller">
-   <children>
-      <Label layoutX="19.0" layoutY="19.0" prefHeight="28.0" prefWidth="346.0" text="Goal 3: Maintain animal master database">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="491.0" layoutY="692.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="504.0" layoutY="5.0" prefHeight="28.0" prefWidth="122.0" text="Hut Manager">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="534.0" layoutY="35.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="506.0" layoutX="115.0" layoutY="69.0" startX="-97.0" />
-      <Label alignment="CENTER" layoutX="17.0" layoutY="77.0" prefHeight="27.0" prefWidth="582.0" text="Database">
-         <font>
-            <Font name="System Bold" size="18.0" />
-         </font>
-      </Label>
-      <TableView fx:id="animalTableView" layoutX="18.0" layoutY="191.0" prefHeight="200.0" prefWidth="600.0">
-         <columns>
-            <TableColumn fx:id="animalIdCOL" prefWidth="85.0" text="Animal ID" />
-            <TableColumn fx:id="animalTypeCOL" prefWidth="95.0" text="Animal Type" />
-            <TableColumn fx:id="breedCOL" prefWidth="73.0" text="Breed" />
-            <TableColumn fx:id="weightCOL" prefWidth="94.0" text="Weight (kg)" />
-            <TableColumn fx:id="ageCOL" prefWidth="57.0" text="Age" />
-            <TableColumn fx:id="askingPriceCOL" prefWidth="106.0" text="Asking Price " />
-            <TableColumn fx:id="entryDateCOl" prefWidth="88.0" text="Entry Date" />
-         </columns>
-      </TableView>
-      <TextField fx:id="searchTF1" layoutX="298.0" layoutY="163.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
-      <Button layoutX="543.0" layoutY="163.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
-      <TableView fx:id="ownerTableView" layoutX="19.0" layoutY="470.0" prefHeight="200.0" prefWidth="607.0">
-        <columns>
-            <TableColumn fx:id="ownerIdCOL" prefWidth="96.0" text="Owner ID" />
-            <TableColumn fx:id="ownerNameCOL" prefWidth="134.0" text="Owner Name" />
-            <TableColumn fx:id="ownerNidCOL" prefWidth="119.0" text="Owner NID" />
-            <TableColumn fx:id="ownerPhoneCOL" prefWidth="129.0" text="Owner Phone" />
-            <TableColumn fx:id="ownerAddressCOL" prefWidth="127.0" text="Owner Address" />
-        </columns>
-      </TableView>
-      <TextField fx:id="searchTF11" layoutX="306.0" layoutY="442.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
-      <Button layoutX="551.0" layoutY="442.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
-      <Label layoutX="284.0" layoutY="127.0" text="Animal">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="274.0" layoutY="412.0" text="Owner">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="19.0" layoutY="444.0" mnemonicParsing="false" onAction="#ownerEditOnActionButton" text="Edit" />
-      <Button layoutX="19.0" layoutY="166.0" mnemonicParsing="false" onAction="#animalEditOnActionButton" text="Edit" />
-   </children>
+    <children>
+        <Label layoutX="19.0" layoutY="19.0" prefHeight="28.0" prefWidth="346.0" text="Goal 3: Maintain animal master database">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="491.0" layoutY="692.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="504.0" layoutY="5.0" prefHeight="28.0" prefWidth="122.0" text="Hut Manager">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="534.0" layoutY="35.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="506.0" layoutX="115.0" layoutY="69.0" startX="-97.0" />
+        <Label alignment="CENTER" layoutX="17.0" layoutY="77.0" prefHeight="27.0" prefWidth="582.0" text="Database">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <TableView fx:id="animalTableView" layoutX="18.0" layoutY="191.0" prefHeight="200.0" prefWidth="600.0">
+            <columns>
+                <TableColumn fx:id="animalIdCOL" prefWidth="85.0" text="Animal ID" />
+                <TableColumn fx:id="animalTypeCOL" prefWidth="95.0" text="Animal Type" />
+                <TableColumn fx:id="breedCOL" prefWidth="73.0" text="Breed" />
+                <TableColumn fx:id="weightCOL" prefWidth="94.0" text="Weight (kg)" />
+                <TableColumn fx:id="ageCOL" prefWidth="57.0" text="Age" />
+                <TableColumn fx:id="askingPriceCOL" prefWidth="106.0" text="Asking Price " />
+                <TableColumn fx:id="entryDateCOl" prefWidth="88.0" text="Entry Date" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchAnimalTF" layoutX="298.0" layoutY="163.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
+        <Button layoutX="543.0" layoutY="163.0" mnemonicParsing="false" onAction="#searchAnimalOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+        <TableView fx:id="ownerTableView" layoutX="19.0" layoutY="470.0" prefHeight="200.0" prefWidth="607.0">
+            <columns>
+                <TableColumn fx:id="ownerIdCOL" prefWidth="96.0" text="Owner ID" />
+                <TableColumn fx:id="ownerNameCOL" prefWidth="134.0" text="Owner Name" />
+                <TableColumn fx:id="ownerNidCOL" prefWidth="119.0" text="Owner NID" />
+                <TableColumn fx:id="ownerPhoneCOL" prefWidth="129.0" text="Owner Phone" />
+                <TableColumn fx:id="ownerAddressCOL" prefWidth="127.0" text="Owner Address" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchOwnerTF" layoutX="306.0" layoutY="442.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
+        <Button layoutX="551.0" layoutY="442.0" mnemonicParsing="false" onAction="#searchOwnerOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+        <Label layoutX="284.0" layoutY="127.0" text="Animal">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Label layoutX="274.0" layoutY="412.0" text="Owner">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="19.0" layoutY="444.0" mnemonicParsing="false" onAction="#ownerEditOnActionButton" text="Edit" />
+        <Button layoutX="19.0" layoutY="166.0" mnemonicParsing="false" onAction="#animalEditOnActionButton" text="Edit" />
+        <Button layoutX="540.0" layoutY="78.0" mnemonicParsing="false" onAction="#loadOnActionButton" text="Load" />
+    </children>
 </AnchorPane>

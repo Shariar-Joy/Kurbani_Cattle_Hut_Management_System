@@ -1,12 +1,17 @@
 package com.group9.kurbani_cattle_hut_management_system.Joy;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Class.Animal;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.AlertUtil;
+import com.group9.kurbani_cattle_hut_management_system.Joy.Utils.FilesUtil;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Hut_Manager_Goal3_1Controller
 {
@@ -27,8 +32,11 @@ public class Hut_Manager_Goal3_1Controller
     @javafx.fxml.FXML
     private TextField breedTF;
 
+    final private ArrayList<Animal> animalEditList = new ArrayList<>();
+
     @javafx.fxml.FXML
     public void initialize() {
+        animalTypeCB.getItems().addAll("Cow", "Goat", "Sheep", "Buffalo", "Camel");
     }
 
     @javafx.fxml.FXML
@@ -43,6 +51,35 @@ public class Hut_Manager_Goal3_1Controller
 
     @javafx.fxml.FXML
     public void saveOnActionButton(ActionEvent actionEvent) {
+        String animalID = animalIdTF.getText();
+        String animalType = animalTypeCB.getValue();
+        String breed = breedTF.getText();
+        int weight = 0;
+        int age = 0;
+        int askingPrice = 0;
+        String color = colorTF.getText();
+        LocalDate entryDate = entryDateDatePicker.getValue();
+
+        try {
+            weight = Integer.parseInt(weightTF.getText().trim());
+            age = Integer.parseInt(ageTF.getText().trim());
+            askingPrice = Integer.parseInt(askingPriceTF.getText().trim());
+        } catch (Exception e) {
+            AlertUtil.showError("Invalid Input", "Please enter valid numbers for weight, age, and asking price.");
+            return;
+        }
+        if (animalID.isEmpty() || animalType == null || breed.isEmpty() || entryDate == null || color.isEmpty() ||
+                weightTF.getText().isEmpty() || ageTF.getText().isEmpty() || askingPriceTF.getText().isEmpty()) {
+            AlertUtil.showError("Input Error", "Please fill all the required fields.");
+            return;
+        }
+        Animal newAnimal = new Animal(animalID, animalType, breed, weight, age, askingPrice, entryDate, color, null, "Available");
+
+        animalEditList.add(newAnimal);
+        AlertUtil.showInfo("Success", "Animal information saved successfully.");
+
+        FilesUtil.saveObject("data/animal-edit.bin", animalEditList);
+
     }
 
     @javafx.fxml.FXML

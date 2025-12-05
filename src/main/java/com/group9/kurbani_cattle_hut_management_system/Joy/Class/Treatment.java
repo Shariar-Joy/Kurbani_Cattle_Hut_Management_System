@@ -1,8 +1,9 @@
-package com.group9.kurbani_cattle_hut_management_system.Joy;
+package com.group9.kurbani_cattle_hut_management_system.Joy.Class;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Treatment {
+public class Treatment implements Serializable {
     private String diagnosis;
     private String medication;
     private String dosage;
@@ -124,4 +125,9 @@ public class Treatment {
                 ", updateStatus='" + updateStatus + '\'' +
                 '}';
     }
+
+    public String getAnimalID() {
+        return null;
+    }
 }
+

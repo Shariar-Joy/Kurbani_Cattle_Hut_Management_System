@@ -11,78 +11,91 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="601.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal1Controller">
-   <children>
-      <Label layoutX="24.0" layoutY="21.0" prefHeight="28.0" prefWidth="346.0" text="Goal 1: Monitor cattle entries &amp; exits">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Button layoutX="860.0" layoutY="570.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
-      <Label alignment="CENTER" layoutX="866.0" layoutY="18.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Button layoutX="896.0" layoutY="49.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
-      <Line endX="877.0" layoutX="110.0" layoutY="78.0" startX="-83.0" />
-      <TextField fx:id="animalIdTF" layoutX="24.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" promptText="Animal ID" />
-      <Label layoutX="24.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Animal Registration">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="breedTF" layoutX="24.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Breed" />
-      <TextField fx:id="ageTF" layoutX="24.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Age" />
-      <TextField fx:id="weightTF" layoutX="197.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Weight (kg)" />
-      <TextField fx:id="colorTF" layoutX="197.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" promptText="Color" />
-      <TextField fx:id="askingPriceTF" layoutX="197.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Asking Price" />
-      <Label layoutX="378.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Owner Registration">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="ownerIdTF" layoutX="378.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner ID" />
-      <TextField fx:id="ownerNidTF" layoutX="378.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Onwer NID" />
-      <TextField fx:id="ownerPhone" layoutX="378.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Phone" />
-      <TextField fx:id="ownerNameTF" layoutX="549.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Name" />
-      <TextField fx:id="ownerAddressTF" layoutX="549.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Address" />
-      <DatePicker fx:id="entryDateDatePicker" layoutX="24.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" promptText="Entry Date" />
-      <ComboBox fx:id="animalTypeCB" layoutX="197.0" layoutY="131.0" prefHeight="28.0" prefWidth="150.0" promptText="Animal Type" />
-      <ComboBox fx:id="selectTentCB" layoutX="549.0" layoutY="221.0" prefHeight="28.0" prefWidth="150.0" promptText="Select Tent" />
-      <TableView fx:id="animalTableView" layoutX="24.0" layoutY="368.0" prefHeight="200.0" prefWidth="672.0">
-        <columns>
-          <TableColumn fx:id="animalIdCOL" prefWidth="92.0" text="Animal ID" />
-          <TableColumn fx:id="animalTypeCOL" prefWidth="104.0" text="Animal Type" />
-            <TableColumn fx:id="entryDateCOl" prefWidth="92.0" text="Entry Date" />
-            <TableColumn fx:id="ownerIdCOL" prefWidth="90.0" text="Owner ID" />
-            <TableColumn fx:id="ownerNameCOL" prefWidth="108.0" text="Owner Name" />
-            <TableColumn fx:id="tentCOL" prefWidth="88.0" text="Tent" />
-            <TableColumn fx:id="statusCOL" prefWidth="96.0" text="Status" />
-        </columns>
-      </TableView>
-      <Label layoutX="740.0" layoutY="90.0" prefHeight="34.0" prefWidth="101.0" text="Remove Animal">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="searchTF" layoutX="379.0" layoutY="340.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
-      <Button layoutX="621.0" layoutY="340.0" mnemonicParsing="false" onAction="#searchOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
-      <Button layoutX="24.0" layoutY="312.0" mnemonicParsing="false" onAction="#saveOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Save Entry" />
-      <Button layoutX="116.0" layoutY="312.0" mnemonicParsing="false" onAction="#cancelOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Refresh" />
-      <Line endX="-100.0" endY="446.0" layoutX="815.0" layoutY="123.0" startX="-100.0" />
-      <TextField fx:id="removeAnimalIdTF" layoutX="725.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" promptText="Animal ID" />
-      <TextField fx:id="reasonToRemoveTF" alignment="CENTER" layoutX="725.0" layoutY="176.0" prefHeight="67.0" prefWidth="278.0" promptText="Reason To Remov" />
-      <DatePicker fx:id="exitDateDatePicker" layoutX="868.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" promptText="Exit Date" />
-      <Button layoutX="838.0" layoutY="265.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
-      <Line endX="155.0" layoutX="842.0" layoutY="312.0" startX="-126.5" />
-      <Label layoutX="808.0" layoutY="323.0" prefHeight="34.0" prefWidth="101.0" text="Animal Status">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="statusAnimalIdTF" layoutX="789.0" layoutY="368.0" prefHeight="28.0" prefWidth="135.0" promptText="Animal ID" />
-      <ComboBox fx:id="statusCB" layoutX="789.0" layoutY="413.0" prefHeight="25.0" prefWidth="135.0" promptText="Status" />
-      <Button layoutX="836.0" layoutY="468.0" mnemonicParsing="false" onAction="#statusSaveOnActionButton" text="Save" />
-   </children>
+<AnchorPane prefHeight="846.0" prefWidth="1003.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.group9.kurbani_cattle_hut_management_system.Joy.Hut_Manager_Goal1Controller">
+    <children>
+        <Label layoutX="24.0" layoutY="21.0" prefHeight="28.0" prefWidth="346.0" text="Goal 1: Monitor cattle entries &amp; exits">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+        </Label>
+        <Button layoutX="857.0" layoutY="805.0" mnemonicParsing="false" onAction="#goBackOnActionButton" text="Go back to Dashboard" />
+        <Label alignment="CENTER" layoutX="866.0" layoutY="18.0" prefHeight="34.0" prefWidth="122.0" text="Hut Manager">
+            <font>
+                <Font name="System Bold" size="13.0" />
+            </font>
+        </Label>
+        <Button layoutX="896.0" layoutY="49.0" mnemonicParsing="false" onAction="#signOutOnActionButton" text="Sign Out" />
+        <Line endX="877.0" layoutX="110.0" layoutY="78.0" startX="-83.0" />
+        <TextField fx:id="animalIdTF" layoutX="24.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" text="Animal ID " />
+        <Label layoutX="24.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Animal Registration">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="breedTF" layoutX="24.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Breed" />
+        <TextField fx:id="ageTF" layoutX="24.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Age" />
+        <TextField fx:id="weightTF" layoutX="197.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Weight (kg)" />
+        <TextField fx:id="colorTF" layoutX="197.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" promptText="Color" />
+        <TextField fx:id="askingPriceTF" layoutX="197.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Asking Price" />
+        <Label layoutX="378.0" layoutY="93.0" prefHeight="28.0" prefWidth="135.0" text="Owner Registration">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="ownerIdTF" layoutX="378.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" text="Owner ID" />
+        <TextField fx:id="ownerNidTF" layoutX="378.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Onwer NID" />
+        <TextField fx:id="ownerPhone" layoutX="378.0" layoutY="221.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Phone" />
+        <TextField fx:id="ownerNameTF" layoutX="549.0" layoutY="131.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Name" />
+        <TextField fx:id="ownerAddressTF" layoutX="549.0" layoutY="176.0" prefHeight="28.0" prefWidth="149.0" promptText="Owner Address" />
+        <DatePicker fx:id="entryDateDatePicker" layoutX="24.0" layoutY="263.0" prefHeight="28.0" prefWidth="149.0" promptText="Entry Date" />
+        <ComboBox fx:id="animalTypeCB" layoutX="197.0" layoutY="131.0" prefHeight="28.0" prefWidth="150.0" promptText="Animal Type" />
+        <ComboBox fx:id="selectTentCB" layoutX="549.0" layoutY="221.0" prefHeight="28.0" prefWidth="150.0" promptText="Select Tent" />
+        <TableView fx:id="animalTableView" layoutX="24.0" layoutY="368.0" prefHeight="200.0" prefWidth="672.0">
+            <columns>
+                <TableColumn fx:id="animalIdCOL" prefWidth="92.0" text="Animal ID" />
+                <TableColumn fx:id="animalTypeCOL" prefWidth="126.0" text="Animal Type" />
+                <TableColumn fx:id="weightCOL" prefWidth="108.0" text="Weight (kg)" />
+                <TableColumn fx:id="ageCOL" prefWidth="79.0" text="Age" />
+                <TableColumn fx:id="entryDateCOl" prefWidth="103.0" text="Entry Date" />
+                <TableColumn fx:id="tentCOL" prefWidth="81.0" text="Tent" />
+                <TableColumn fx:id="statusCOL" prefWidth="81.0" text="Status" />
+            </columns>
+        </TableView>
+        <Label layoutX="740.0" layoutY="90.0" prefHeight="34.0" prefWidth="101.0" text="Remove Animal">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="searchAnimalTF" layoutX="379.0" layoutY="340.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
+        <Button layoutX="621.0" layoutY="340.0" mnemonicParsing="false" onAction="#searchAnimalOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+        <Button layoutX="24.0" layoutY="312.0" mnemonicParsing="false" onAction="#saveOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Save Entry" />
+        <Button layoutX="928.0" layoutY="81.0" mnemonicParsing="false" onAction="#cancelOnActionButton" prefHeight="25.0" prefWidth="63.0" text="Refresh" />
+        <Line endX="-100.0" endY="446.0" layoutX="815.0" layoutY="123.0" startX="-100.0" />
+        <TextField fx:id="removeAnimalIdTF" layoutX="725.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" promptText="Animal ID" />
+        <TextField fx:id="reasonToRemoveTF" alignment="CENTER" layoutX="725.0" layoutY="176.0" prefHeight="67.0" prefWidth="278.0" promptText="Reason To Remov" />
+        <DatePicker fx:id="exitDateDatePicker" layoutX="868.0" layoutY="131.0" prefHeight="28.0" prefWidth="135.0" promptText="Exit Date" />
+        <Button layoutX="838.0" layoutY="265.0" mnemonicParsing="false" onAction="#removeOnActionButton" text="Remove" />
+        <Line endX="155.0" layoutX="842.0" layoutY="312.0" startX="-126.5" />
+        <Label layoutX="808.0" layoutY="323.0" prefHeight="34.0" prefWidth="101.0" text="Animal Status">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="statusAnimalIdTF" layoutX="789.0" layoutY="368.0" prefHeight="28.0" prefWidth="135.0" promptText="Animal ID" />
+        <ComboBox fx:id="statusCB" layoutX="789.0" layoutY="413.0" prefHeight="25.0" prefWidth="135.0" promptText="Status" />
+        <Button layoutX="836.0" layoutY="468.0" mnemonicParsing="false" onAction="#statusSaveOnActionButton" text="Save" />
+        <Button layoutX="336.0" layoutY="342.0" mnemonicParsing="false" onAction="#loadAnimalOnActionButton" text="Load" />
+        <TableView fx:id="ownerTableView" layoutX="24.0" layoutY="632.0" prefHeight="200.0" prefWidth="672.0">
+            <columns>
+                <TableColumn fx:id="ownerIdCOL" prefWidth="99.0" text="Owner ID" />
+                <TableColumn fx:id="ownerNameCOL" prefWidth="135.0" text="Owner Name" />
+                <TableColumn fx:id="ownerNIDCOL" prefWidth="168.0" text="Owner NID" />
+                <TableColumn fx:id="ownerAddressCOL" prefWidth="144.0" text="Owner Address" />
+                <TableColumn fx:id="ownerPhoneCOL" prefWidth="125.0" text="Owner Phone" />
+            </columns>
+        </TableView>
+        <TextField fx:id="searchOwnerTF" layoutX="378.0" layoutY="604.0" prefHeight="28.0" prefWidth="245.0" promptText="Search by Animal ID" />
+        <Button layoutX="620.0" layoutY="604.0" mnemonicParsing="false" onAction="#searchOwnerOnActionButton" prefHeight="28.0" prefWidth="75.0" text="Search" />
+        <Button layoutX="336.0" layoutY="606.0" mnemonicParsing="false" onAction="#loadOwnerOnActionButton" text="Load" />
+    </children>
 </AnchorPane>
