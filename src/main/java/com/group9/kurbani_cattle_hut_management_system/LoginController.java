@@ -65,6 +65,15 @@ public class LoginController {
         } else if (email.equals("d") && password.equals("1234")) {
             BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/doctor-view.fxml");
 
+        } if (email.equals("c") && password.equals("1234")) {
+            com.group9.kurbani_cattle_hut_management_system.BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Ishmam/customer-view.fxml");
+
+
+        } if (email.equals("l") && password.equals("1234")) {
+            com.group9.kurbani_cattle_hut_management_system.BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Ishmam/logistics-officer-view.fxml");
+
+
+
         } else {
             showAlert("Error", "The Information is Invalid. Check your email and password.");
         }
