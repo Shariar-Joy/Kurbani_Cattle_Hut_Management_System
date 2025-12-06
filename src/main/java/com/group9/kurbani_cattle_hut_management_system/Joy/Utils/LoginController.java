@@ -2,6 +2,7 @@ package com.group9.kurbani_cattle_hut_management_system.Joy.Utils;
 
 import com.group9.kurbani_cattle_hut_management_system.BaseController;
 import javafx.event.ActionEvent;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 import java.io.IOException;
@@ -11,7 +12,7 @@ public class LoginController
     @javafx.fxml.FXML
     private TextField emailTF;
     @javafx.fxml.FXML
-    private TextField passwordTF;
+    private PasswordField passwordTF;
 
     @javafx.fxml.FXML
     public void initialize() {
@@ -26,9 +27,9 @@ public class LoginController
                 AlertUtil.showError("Error", "The Information is Missing");
                 return;
         }
-        if (email.equals("a") && password.equals("1234")) {
+        if (email.equals("admin@gmail.com") && password.equals("123456")) {
             BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager-view.fxml");
-        } else if (email.equals("d") && password.equals("1234")) {
+        } else if (email.equals("doctor@gmail.com") && password.equals("123456")) {
             BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/doctor-view.fxml");
         }else {
             AlertUtil.showError("Error", "The Information is Invalid. Check your email and password.");
