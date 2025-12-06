@@ -32,6 +32,7 @@ public class SignUpController {
 
     @javafx.fxml.FXML
     public void initialize() {
+        roleCB.getItems().addAll("Admin","Doctor");
 
     }
 
