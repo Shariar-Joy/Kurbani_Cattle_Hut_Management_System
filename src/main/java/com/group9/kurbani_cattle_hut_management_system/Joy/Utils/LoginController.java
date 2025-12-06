@@ -27,9 +27,9 @@ public class LoginController
                 AlertUtil.showError("Error", "The Information is Missing");
                 return;
         }
-        if (email.equals("admin@gmail.com") && password.equals("123456")) {
+        if (email.equals("admin@gmail.com") && password.equals("12345")) {
             BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/hut-manager-view.fxml");
-        } else if (email.equals("doctor@gmail.com") && password.equals("123456")) {
+        } else if (email.equals("doctor@gmail.com") && password.equals("12345")) {
             BaseController.switchTo(actionEvent, "/com/group9/kurbani_cattle_hut_management_system/Joy/doctor-view.fxml");
         }else {
             AlertUtil.showError("Error", "The Information is Invalid. Check your email and password.");
